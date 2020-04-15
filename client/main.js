@@ -2,7 +2,7 @@ import React from "react";
 import { Meteor } from "meteor/meteor";
 import { render } from "react-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Canvas from "./imports/api/Canvas.js";
+
 import Home from "./imports/ui/Home.js";
 
  
