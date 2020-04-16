@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 
-class Home extends Component {
+export default class Diets extends Component {
     render() {
         return (
             <div>
-                Home
+                Diets
             </div>
         )
     }
 }
-
-export default Home;
