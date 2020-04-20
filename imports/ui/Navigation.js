@@ -7,7 +7,7 @@ class Navigation extends Component {
         return (
             <div>
                 <Navbar bg="light" expand="lg">
-                    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                    <Navbar.Brand href="#home">EasyDiets</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
@@ -26,6 +26,9 @@ class Navigation extends Component {
                             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                             <Button variant="outline-success">Search</Button>
                         </Form>
+                        <Nav className="mr-auto mr-auto1">
+                        <Nav.Link><Link to="/SignUp" id="SignUpLink" variant="dark">Sign up</Link></Nav.Link>
+                        </Nav>
                     </Navbar.Collapse>
                 </Navbar>
             </div>
