@@ -1,0 +1,1 @@
+//export React, { Component } from 'react'

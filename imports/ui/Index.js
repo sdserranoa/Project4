@@ -6,18 +6,20 @@ import Diets from './Diets.js';
 import Contact from './Contact.js';
 import Restaurants from './Restaurants.js';
 import Orders from './Order/OrderList.js';
+import Meals from './Meals/Meal';
 
 class Index extends Component {
 
     render() {
         return (
             <Router>
-                <Navigation/>
+                <Navigation />
                 <Route path="/" exact component={Home} />
                 <Route path="/restaurant" component={Restaurants} />
                 <Route path="/diets" component={Diets} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/orders" component={Orders} />
+                <Route path="/meals" component={Meals} />
 
             </Router>
         );

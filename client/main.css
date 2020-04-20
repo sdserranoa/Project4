@@ -2,3 +2,15 @@ body {
   padding: 0px;
   font-family: sans-serif;
 }
+
+.navbar {
+  background-color: #8CC700;
+}
+
+.nav-link {
+  color: #FF5100;
+}
+
+.link:hover {
+  color: rgb(212, 67, 0)
+}
