@@ -5,7 +5,9 @@ import Home from './Home.js';
 import Diets from './Diets.js';
 import Contact from './Contact.js';
 import Restaurants from './Restaurants.js';
+import UserWrap from './UserManager/UserWrap.js';
 import Orders from './Order/OrderList.js';
+
 
 class Index extends Component {
 
@@ -18,7 +20,7 @@ class Index extends Component {
                 <Route path="/diets" component={Diets} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/orders" component={Orders} />
-
+                <Route path="/SignUp" component={UserWrap}/>
             </Router>
         );
     };
