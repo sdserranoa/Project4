@@ -27,6 +27,18 @@ export default class MealList extends Component {
                         "name": "Ingrediente 3",
                         "quantity": 50
                     }
+                ],
+                "nutritionalInfo": [
+                    {
+                        "name": "Calorías",
+                        "quantity": 235,
+                        "unit": ""
+                    },
+                    {
+                        "name": "Grasas",
+                        "quantity": 10,
+                        "unit": "g"
+                    }
                 ]
             },
             {
@@ -50,6 +62,28 @@ export default class MealList extends Component {
                     {
                         "name": "Ingrediente 3",
                         "quantity": 100
+                    }
+                ],
+                "nutritionalInfo": [
+                    {
+                        "name": "Calorías",
+                        "quantity": 250,
+                        "unit": ""
+                    },
+                    {
+                        "name": "Grasas",
+                        "quantity": 5,
+                        "unit": "g"
+                    },
+                    {
+                        "name": "Carbohidratos",
+                        "quantity": 26,
+                        "unit": "g"
+                    },
+                    {
+                        "name": "Proteínas",
+                        "quantity": 150,
+                        "unit": "g"
                     }
                 ]
             },
@@ -77,6 +111,23 @@ export default class MealList extends Component {
                     {
                         "name": "Ingrediente 4",
                         "quantity": 300
+                    }
+                ],
+                "nutritionalInfo": [
+                    {
+                        "name": "Calorías",
+                        "quantity": 300,
+                        "unit": ""
+                    },
+                    {
+                        "name": "Grasas",
+                        "quantity": 30,
+                        "unit": "g"
+                    },
+                    {
+                        "name": "Proteínas",
+                        "quantity": 200,
+                        "unit": "g"
                     }
                 ]
             }
