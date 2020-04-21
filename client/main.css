@@ -182,8 +182,6 @@ body {
 
 .login-btn {
   padding: 2px 30px;
-  /* background-color: #417cef;
-  */
   border: 0;
   font-size: 18px;
   border-radius: 3px;
@@ -208,7 +206,7 @@ body {
 .password-state {
   display: flex;
   flex-direction: row;
-  margin-top: 20px;
+  margin-top: 0;
 }
 
 .pwd {
