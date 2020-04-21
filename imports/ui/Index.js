@@ -7,7 +7,7 @@ import Contact from './Contact.js';
 import Restaurants from './Restaurants.js';
 import UserWrap from './UserManager/UserWrap.js';
 import Orders from './Order/OrderList.js';
-import Meals from './Meals/Meal';
+import Meals from './Meals/MealList';
 
 
 class Index extends Component {
