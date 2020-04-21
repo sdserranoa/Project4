@@ -1,47 +1,49 @@
-
-
-a.nav-link > a{
-  color:#ff5100;
+a.nav-link>a {
+  color: #ff5100;
 }
 
-a.nav-link > a:hover{
-  color:#28a745;
+a.nav-link>a:hover {
+  color: #28a745;
 }
 
 .navbar-brand {
-  color:#3A7000 !important;
+  color: #3A7000 !important;
 }
-.dropdown-toggle{
-  color:#28a745 !important;
+
+.dropdown-toggle {
+  color: #28a745 !important;
 }
+
 /*    ===============================================User Wrap=================================    */
+
 body {
   padding: 0;
   font-family: sans-serif;
-
 }
+
 .mr-auto1 {
   float: right !important;
   margin-right: 0 !important;
 }
-#SignUpLink{
-  color:#ff5100;
+
+#SignUpLink {
+  color: #ff5100;
   display: inline-block;
   font-weight: 400;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid #ff5100;
-      border-top-color: #ff5100;
-      border-right-color: #ff5100;
-      border-bottom-color: #ff5100;
-      border-left-color: #ff5100;
+  border-top-color: #ff5100;
+  border-right-color: #ff5100;
+  border-bottom-color: #ff5100;
+  border-left-color: #ff5100;
   padding: .375rem .75rem;
   font-size: 1rem;
   border-radius: .25rem;
 }
-#SignInLink{
-  vertical-align: text-bottom !important;
 
+#SignInLink {
+  vertical-align: text-bottom !important;
 }
 
 #rootUsers {
@@ -49,8 +51,8 @@ body {
   height: 100%;
   box-sizing: border-box;
   margin: 5% 0 auto 0;
-
 }
+
 .root-container {
   width: 100%;
   height: 100%;
@@ -60,6 +62,7 @@ body {
   flex-direction: column;
   vertical-align: middle;
 }
+
 .box-controller {
   background-color: white;
   visibility: visible;
@@ -75,6 +78,7 @@ body {
   align-items: center;
   transition: visibility 0.5s ease-out;
 }
+
 .controller {
   flex: 1;
   text-align: center;
@@ -82,10 +86,12 @@ body {
   line-height: 2;
   cursor: pointer;
 }
+
 .selected-controller {
   transition: border 0.5s ease-out;
   border-bottom: 2px solid #3A7000;
 }
+
 .box-container {
   background-color: white;
   display: flex;
@@ -96,13 +102,16 @@ body {
   border-radius: 6px;
   padding: 24px;
 }
+
 .inner-container {
   transition: visibility 0.2s ease-out;
 }
+
 .inner-container.show {
   visibility: visible;
 }
-.titleLogin{
+
+.titleLogin {
   color: #ff5100;
   text-align: center;
   padding: 10px;
@@ -110,35 +119,40 @@ body {
   font-family: Ozxgen, sans-serif;
   font-size: 44px;
 }
+
 .header {
   text-align: center;
   padding: 5px;
   margin-bottom: 17px;
- /* margin-left: 35px;
+  /* margin-left: 35px;
   */
- /* margin-right: 35px;
+  /* margin-right: 35px;
   */
   font-family: Ozxgen, sans-serif;
   font-size: 22px;
   border-bottom: 2px solid #3A7000;
 }
+
 .box {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .input-group {
   display: flex;
   flex-direction: column;
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
 .login-label {
   font-family: Oxygen, sans-serif;
   font-size: 20px;
   font-weight: 600;
   padding-left: 5px;
 }
+
 .login-input {
   height: 2.1em;
   border-radius: 3px;
@@ -150,18 +164,22 @@ body {
   color: #3e3e42;
   background: rgba(15, 15, 15, 0.01);
 }
+
 .login-input:hover {
   border: 2px solid #3A7000;
 }
+
 .login-input:focus {
   border: 2px solid #6565e7;
   box-shadow: 0 0 20px rgba(15, 15, 15, 0.2);
 }
+
 .login-input::placeholder {
   font-family: Oxygen, sans-serif;
   font-size: 16px;
   color: rgba(15, 15, 15, 0.4);
 }
+
 .login-btn {
   padding: 2px 30px;
   border: 0;
@@ -174,36 +192,64 @@ body {
   transition: background-color 0.3s ease-out;
   cursor: pointer;
 }
+
 .login-btn:hover, .login-btn:focus {
   background-color: #ff5100;
   color: white;
 }
+
 .danger-error {
   color: #e74c3c;
   font-size: 16px;
 }
+
 .password-state {
   display: flex;
   flex-direction: row;
   margin-top: 0;
 }
+
 .pwd {
   height: 6px;
   flex: 1;
   visibility: hidden;
 }
+
 .pwd-weak {
   background-color: #e74c3c;
 }
+
 .pwd-medium {
   background-color: #3498db;
 }
+
 .pwd-strong {
   background-color: #2ecc71;
 }
+
 .show {
   visibility: visible;
 }
 
 /*    ===============================================User Wrap=================================    */
 
+/* Meals styles */
+
+.meal-card {
+  width: 75%;
+  margin: 0 auto 30px auto;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.meal-card:hover {
+  -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.75);
+  transition: box-shadow 0.5s;
+}
+
+.meal-thumbnail {
+  width: 150px;
+  height: 150px;
+}
