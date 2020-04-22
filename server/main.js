@@ -3,6 +3,7 @@ import { Orders } from '../imports/api/orders.js';
 import { Meals } from '../imports/api/meals';
 import mealsMock from './mocks/mealsMock';
 
+
 Meteor.startup(() => {
   // code to run on server at startup
   Meals.remove({})
