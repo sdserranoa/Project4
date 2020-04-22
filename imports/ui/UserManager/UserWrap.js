@@ -32,8 +32,8 @@ class UserWrap extends Component {
                         onClick={this.showRegisterBox.bind(this)}>Register</div>
                 </div>
                 <div className="box-container">
-                    {this.state.isLoginOpen && <SignIn />}
-                    {this.state.isRegisterOpen && <SignUp />}
+                    {this.state.isLoginOpen && <SignIn login={this.props.login}/>}
+                    {this.state.isRegisterOpen && <SignUp singup={this.props.singup}/>}
                 </div>
                 <ParticlesBg color="#28a745" type="cobweb" bg={true} />
             </div>

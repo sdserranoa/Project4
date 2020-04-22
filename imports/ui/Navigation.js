@@ -1,9 +1,25 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { Meteor } from 'meteor/meteor';
 
-class Navigation extends Component {
+
+
+
+export default class Navigation extends Component {
+
+    constructor(props){
+        super(props);
+        this.state={logoutON:this.props.isAuthenticated}
+    }
+    logoutReload(e){
+        console.log('entra a logoutReload');
+        this.props.logout(); 
+        this.setState({logoutON:this.props.isAuthenticated});
+    }
+
     render() {
+        let userid = Meteor.userId();
         return (
             <div>
                 <Navbar bg="light" expand="lg">
@@ -21,7 +37,15 @@ class Navigation extends Component {
                             <Button variant="outline-success">Search</Button>
                         </Form>
                         <Nav>
-                            <Nav.Link><Link to="/SignUp" id="SignUpLink" variant="dark">Sign up</Link></Nav.Link>
+                            {!Meteor.userId() &&
+                                <Nav.Link ><Link to="/SignUp" id="SignUpLink" variant="dark">Sign up</Link>
+                                    </Nav.Link>
+                            }
+
+                            {Meteor.userId() &&
+                                <Nav.Link ><Link to="/" onClick={this.logoutReload.bind(this)} id="SignUpLink" variant="dark" >Log out </Link>
+                                    </Nav.Link>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
@@ -30,4 +54,3 @@ class Navigation extends Component {
     };
 }
 
-export default Navigation;
