@@ -8,7 +8,7 @@ import { Meals } from '../../api/meals'
 class MealList extends Component {
     render() {
         return (
-            <div>
+            <div role="contentinfo">
                 <Container fluid>
                     <h1>Comidas</h1>
 
