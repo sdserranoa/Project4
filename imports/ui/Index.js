@@ -8,6 +8,7 @@ import Restaurants from './Restaurants.js';
 import UserWrap from './UserManager/UserWrap.js';
 import Orders from './Order/OrderList.js';
 import Meals from './Meals/MealList';
+import MealDetail from './Meals/MealDetail';
 
 
 class Index extends Component {
@@ -21,7 +22,8 @@ class Index extends Component {
                 <Route path="/diets" component={Diets} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/orders" component={Orders} />
-                <Route path="/meals" component={Meals} />
+                <Route exact path="/meals" component={Meals} />
+                <Route path="/meals/:id" component={MealDetail} />
 
                 <Route path="/SignUp" component={UserWrap} />
             </Router>
