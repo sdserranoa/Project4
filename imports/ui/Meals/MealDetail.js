@@ -17,9 +17,9 @@ class MealDetail extends Component {
         const meal = temp[0]
 
         return (
-            <Container fluid>
+            <Container fluid role="contentinfo">
                 <a href="/meals"><BackIcon /> Volver a la lista de comidas</a>
-                <h2>Información Adicional: {meal.name}</h2>
+                <h1>Información Adicional: {meal.name}</h1>
                 <Row>
                     <Col>
                         <p>{meal.description}</p>
@@ -33,7 +33,7 @@ class MealDetail extends Component {
                         </Row>
                         <hr />
 
-                        <h3>Información Nutricional</h3>
+                        <h2>Información Nutricional</h2>
                         <Table responsive hover>
                             <thead>
                                 <tr>
@@ -62,7 +62,7 @@ class MealDetail extends Component {
                         </Table>
                         <hr />
 
-                        <h3>Ingredientes</h3>
+                        <h2>Ingredientes</h2>
                         <Table responsive hover>
                             <thead>
                                 <tr>
@@ -83,13 +83,14 @@ class MealDetail extends Component {
                     </Col>
                     <Col xl={7} md={5}>
                         <Carousel style={{ maxHeight: '500px' }}>
-                            {meal.images.map(image => (
+                            {meal.images.map((image, index) => (
                                 < Carousel.Item >
                                     <Image
                                         className="d-block w-100"
                                         src={image}
                                         rounded
                                         style={{ maxHeight: '500px' }}
+                                        alt={meal.name + " imagen " + index}
                                     />
                                 </Carousel.Item>
                             ))}
