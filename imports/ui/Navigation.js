@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
-
-
+import ChatApp from './chat/ChatApp';
+import Card from 'react-bootstrap/Card'
 
 
 export default class Navigation extends Component {
@@ -31,6 +31,9 @@ export default class Navigation extends Component {
                             <Nav.Link><Link to="/diets">Diets</Link></Nav.Link>
                             <Nav.Link><Link to="/Orders">Orders</Link></Nav.Link>
                             <Nav.Link><Link to="/meals">Meals</Link></Nav.Link>
+                            {Meteor.userId() &&
+                            <Nav.Link><Link to="/chat">Chat</Link></Nav.Link>
+                             }
                         </Nav>
                         <Form inline>
                             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -41,14 +44,15 @@ export default class Navigation extends Component {
                                 <Nav.Link ><Link to="/SignUp" id="SignUpLink" variant="dark">Sign up</Link>
                                     </Nav.Link>
                             }
-
+                            
                             {Meteor.userId() &&
                                 <Nav.Link ><Link to="/" onClick={this.logoutReload.bind(this)} id="SignUpLink" variant="dark" >Log out </Link>
                                     </Nav.Link>
                             }
+                           
                         </Nav>
                     </Navbar.Collapse>
-                </Navbar>
+                </Navbar> 
             </div>
         );
     };
