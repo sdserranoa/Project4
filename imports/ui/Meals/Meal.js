@@ -20,7 +20,7 @@ export default class Meal extends Component {
 
                             <Col>
                                 <Row as="h3">{meal.name}</Row>
-                                <Row as="h5" style={{ color: 'grey' }}>Calorías: {meal.calories.quantity}</Row>
+                                <Row as="h5" style={{ color: 'grey' }}>Calorías: {meal.calories}</Row>
                                 <Row as="p">{meal.description}</Row>
                                 <Row as="p" style={{ color: 'green' }}>
                                     <b>${meal.price}</b>
