@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
+//import { withTracker } from 'meteor/react-meteor-data';
 import zxcvbn from 'zxcvbn';
+//import '../../api/users.js';
+import { Accounts } from 'meteor/accounts-base';
+
 
 class SignUp extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { username: "", email: "", password: "", pwdState: "", errors: [], pwdscore: 0, pwdsuggestions: [] };
+        this.state = { username: "", email: "", password: "", errors: [], pwdscore: 0, pwdsuggestions: [] };
     }
 
     //Add New Error Object to the array {elm: msg}
@@ -49,16 +53,10 @@ class SignUp extends Component {
             pwdscore: evaluation.score,
             pwdsuggestions: evaluation.feedback.suggestions
         });
-
-        this.setState({ pwdState: "weak" });
-        if (e.target.value.length > 8) {
-            this.setState({ pwdState: "medium" });
-        } else if (e.target.value.length > 12) {
-            this.setState({ pwdState: "strong" });
-        }
     }
 
     submitRegister(e) {
+        e.preventDefault();
         if (this.state.username == "") {
             this.showValidationErr("username", "Username can't be empty!");
         }
@@ -68,25 +66,14 @@ class SignUp extends Component {
         if (this.state.password == "") {
             this.showValidationErr("password", "Password can't be empty!");
         }
+
+        this.props.singup(this.state.email, this.state.username, this.state.password);
     }
 
     render() {
-        const { pwdscore, pwdsuggestions } = this.state;
         //pasword Strength
-        let pwdWeak = false, pwdMedium = false, pwdStrong = false;
-        //Weak password set onlt the pwdWeak to true, cause render only the first bar 
-        if (this.state.pwdState == "weak") {
-            pwdWeak = true;
-        } else if (this.state.pwdState == "medium") {
-            //Medium pwd then render the weak and medium bars 
-            pwdWeak = true;
-            pwdMedium = true;
-        } else if (this.state.pwdState == "strong") {
-            //Strong, render all the previoud bars 
-            pwdWeak = true;
-            pwdMedium = true;
-            pwdStrong = true;
-        }
+        const { pwdscore, pwdsuggestions } = this.state;
+        
 
         //NULL by default (help us check when rendering)
         let usernameErr = null, passwordErr = null, emailErr = null;
@@ -101,7 +88,11 @@ class SignUp extends Component {
             }
             if (err.elm == "email") {
                 emailErr = err.msg;
+                if(err.msg == "That's an incorrect email!") {
+                    emailErr = err.msg;
+                }
             }
+            
             //No (else if or else) statements cause we need to check for all possible element
         }
         return (
@@ -138,9 +129,7 @@ class SignUp extends Component {
                         </div>}
                         {this.state.password && <Container className="password-state">
                             <Row>
-                                <Col><small>Password Strength:</small></Col>
-                            </Row>
-                            <Row>
+                                <Col xs md lg="12" style={{padding: 0+'px'}}><small>Password Strength:</small></Col>
                                 <Col className={"pwd pwd-weak " + (pwdscore >= 0 ? "show" : "")}></Col>
                                 <Col className={"pwd pwd-medium " + (pwdscore >= 2 ? "show" : "")}></Col>
                                 <Col className={"pwd pwd-strong " + (pwdscore >= 4 ? "show" : "")}></Col>
