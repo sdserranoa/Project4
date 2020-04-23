@@ -28,7 +28,7 @@ class MealDetail extends Component {
                                 <p style={{ color: 'green' }}>Precio unidad: <strong>${meal.price}</strong></p>
                             </Col>
                             <Col>
-                                <CartButton />
+                                <CartButton mealName={meal.name} />
                             </Col>
                         </Row>
                         <hr />
