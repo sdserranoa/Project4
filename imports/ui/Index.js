@@ -10,8 +10,8 @@ import Orders from './Order/OrderList.js';
 import Meals from './Meals/MealList';
 import MealDetail from './Meals/MealDetail';
 import { Meteor } from 'meteor/meteor';
+import ChatApp from './chat/ChatApp';
 import MealFilter from './Meals/MealFilter.js';
-
 
 
 class Index extends Component {
@@ -77,7 +77,7 @@ class Index extends Component {
                 <Route path="/orders" component={Orders} />
                 <Route exact path="/meals" component={MealFilter} />
                 <Route path="/meals/:id" component={MealDetail} />
-
+                <Route path="/chat" component={ChatApp} />
                 <Route path="/SignUp" render={props => <UserWrap singup={this.singup} login={this.login} />} />
             </Router>
         );
