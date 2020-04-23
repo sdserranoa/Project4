@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 /*import { Accounts } from 'meteor/accounts-base';*/
 import { Link } from 'react-router-dom';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 /*
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,15 +15,6 @@ class SignIn extends Component {
         super(props);
         this.state = { username: "", password: "", errors: [] };
     }
-    /*
-    t1 = () => {
-        toast("Success!",
-            {
-                className: "custom-toast",
-                draggable: true,
-                position: toast.POSITION.TOP_RIGHT
-            })
-    }*/
 
     clearValidationErr(elm) {
         this.setState((prevState) => {
