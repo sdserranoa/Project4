@@ -8,9 +8,10 @@ export default class Order extends Component {
         return (
             <tr>
                 <td>{this.state.id}</td>
-                <td>{this.state.menu}</td>
-                <td>{this.state.state}</td>
-                <td>{this.state.addres}</td>
+                <td>{this.state.userName}</td>
+                <td>{this.state.address}</td>
+                <td>{this.state.total}</td>
+                <td>{this.state.delivered.toString()}</td>
             </tr>
         )
     }

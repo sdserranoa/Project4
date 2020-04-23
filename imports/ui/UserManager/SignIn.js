@@ -1,14 +1,27 @@
 import React, { Component } from 'react';
-import { Accounts } from 'meteor/accounts-base';
-import { Meteor } from 'meteor/meteor';
+/*import { Accounts } from 'meteor/accounts-base';*/
+import { Link } from 'react-router-dom';
+/*
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+*/
 
 
 class SignIn extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { username: "",  password: "", errors: []};
+        this.state = { username: "", password: "", errors: [] };
     }
+    /*
+    t1 = () => {
+        toast("Success!",
+            {
+                className: "custom-toast",
+                draggable: true,
+                position: toast.POSITION.TOP_RIGHT
+            })
+    }*/
 
     clearValidationErr(elm) {
         this.setState((prevState) => {
@@ -26,7 +39,7 @@ class SignIn extends Component {
     showValidationErr(elm, msg) {
         this.setState((prevState) => ({ errors: [...prevState.errors, { elm, msg }] }));
     }
-    
+
     onUsernameChange(e) {
         this.setState({ username: e.target.value });
         this.clearValidationErr("username");
@@ -48,13 +61,12 @@ class SignIn extends Component {
         }
 
         this.props.login(this.state.username, this.state.password);
-        
+        //this.t1();
     }
 
     render() {
 
-        let usernameErr = null
-        let passwordErr = null;
+        let usernameErr = null, passwordErr = null;
         //Loop and find which ones has the error
         for (let err of this.state.errors) {
             //Assign the validation error message 
@@ -72,20 +84,20 @@ class SignIn extends Component {
                     <div className="box">
 
                         <div className="input-group">
-        <label htmlFor="username">Username</label>
-                            <input type="text" name="username" className="login-input" placeholder="Username" 
-                            onChange={this.onUsernameChange.bind(this)}/>
+                            <label htmlFor="username">Username</label>
+                            <input type="text" name="username" className="login-input" placeholder="Username"
+                                onChange={this.onUsernameChange.bind(this)} />
                             <small className="danger-error">{usernameErr ? usernameErr : ""}</small>
                         </div>
 
                         <div className="input-group">
                             <label htmlFor="password">Password</label>
-                            <input type="password" name="password" className="login-input" placeholder="Password" 
-                            onChange={this.onPasswordChange.bind(this)}/>
+                            <input type="password" name="password" className="login-input" placeholder="Password"
+                                onChange={this.onPasswordChange.bind(this)} />
                             <small className="danger-error">{passwordErr ? passwordErr : ""}</small>
                         </div>
 
-                        <button type="button" className="login-btn" onClick={this.submitLogin.bind(this)}>Login</button>
+                        <button type="button" className="login-btn" onClick={this.submitLogin.bind(this)}><Link to="/">Login</Link></button>
                     </div>
                 </div>
             </div>
