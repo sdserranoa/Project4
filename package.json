@@ -12,6 +12,7 @@
     "@material-ui/core": "^4.9.10",
     "@material-ui/icons": "^4.9.1",
     "bootstrap": "^4.4.1",
+    "grommet": "^2.13.0",
     "email-validator": "^2.0.4",
     "jquery": "^3.4.1",
     "meteor-node-stubs": "^1.0.0",
@@ -20,6 +21,9 @@
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
+    "socket.io": "^2.3.0",
+    "stream-chat-react": "^0.11.13",
+    "styled-components": "^5.1.0",
     "react-toastify": "^5.5.0",
     "zxcvbn": "^4.4.2"
   },

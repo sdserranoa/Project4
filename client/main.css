@@ -25,6 +25,10 @@ button >a:hover {
   color: #28a745 !important;
 }
 
+.form-check-input:hover, .form-check-label:hover {
+  cursor: pointer;
+}
+
 /*    ===============================================User Wrap=================================    */
 
 body {
@@ -268,6 +272,8 @@ body {
   margin: 0 auto 30px auto;
   border-radius: 15px;
   padding: 15px;
+  box-shadow: none;
+  transition: box-shadow 0.5s;
 }
 
 .meal-card:hover {
@@ -280,4 +286,55 @@ body {
 .meal-thumbnail {
   width: 150px;
   height: 150px;
+}
+
+.card-link:link, .card-link:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.meal-filter {
+  background-color: rgb(248, 249, 250);
+  height: 100vh;
+  border-radius: 10px;
+}
+
+.filter-divider {
+  background-color: #3A7000;
+  color: #3A7000;
+}
+
+.search-meal-form {
+  background-color: rgb(58, 112, 0);
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+  transition: all 0.5s;
+}
+
+.search-meal-form:hover {
+  -webkit-box-shadow: 0px 10px 40px -10px rgba(58, 112, 0, 0.75);
+  -moz-box-shadow: 0px 10px 40px -10px rgba(58, 112, 0, 0.75);
+  box-shadow: 0px 10px 40px -10px rgba(58, 112, 0, 0.75);
+  transition: all 0.5s;
+}
+
+input[type=text].search-meal-input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  border-radius: 0px;
+  color: white;
+}
+
+input[type=text].search-meal-input::placeholder {
+  color: rgb(233, 233, 233)
+}
+
+input[type=text].search-meal-input:focus {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  border-radius: 0px;
+  color: white;
 }
