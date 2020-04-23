@@ -10,7 +10,7 @@ export default class OrderTable extends Component {
   renderRow = t => {
     if (t.delivered) {
       return (
-        <tr bgcolor="red">
+        <tr bgcolor="#8DEF70" onClick={() => this.props.onDetail(t.id)}>
           <td>{t.id}</td>
           <td>{t.userName}</td>
           <td>{t.address}</td>
@@ -20,7 +20,7 @@ export default class OrderTable extends Component {
       )
     } else {
       return (
-        <tr>
+        <tr bgcolor="#E06060" onClick={() => this.props.onDetail(t.id)}>
           <td>{t.id}</td>
           <td>{t.userName}</td>
           <td>{t.address}</td>
@@ -45,7 +45,7 @@ export default class OrderTable extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.orders.map(t => this.renderRow(t))}
+            {this.state.orders.map((t,i) => this.renderRow(t,i))}
           </tbody>
         </Table>
       </div>

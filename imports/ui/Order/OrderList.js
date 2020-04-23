@@ -57,6 +57,7 @@ export default class OrderList extends Component {
     };
 
     handleDetail = id => {
+        
         this.setState({
             renderDetail: {
                 redner: true,
@@ -66,6 +67,7 @@ export default class OrderList extends Component {
     }
 
     renderDetail = () =>{
+        console.log(this.state.renderDetail.render)
         if(this.state.renderDetail.render){
             return(
                 <OrderDetail detail={this.state.tasks.filter(t => t.id == this.state.renderDetail.current)} />
@@ -80,12 +82,6 @@ export default class OrderList extends Component {
     }
 
     render() {
-        
-        const filteredOrders=
-            this.state.orders.filter(order=>{
-                
-                return order.name.toLowerCase().includes(this.state.inputValue.toLowerCase())
-            })
     
         return (
             <div>
@@ -111,7 +107,7 @@ export default class OrderList extends Component {
                                     {this.state.orders.map(t => <Order key={t.id} order={t} />)}
                                 </tbody>
                             </table>*/}
-                            <OrderTable orders={this.state.orders} />
+                            <OrderTable orders={this.state.orders} onDetail={this.handleDetail} />
                         </Col>
                         <Col>
                             {this.renderDetail()}
