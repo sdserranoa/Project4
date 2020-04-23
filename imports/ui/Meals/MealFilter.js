@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Form, Container, Row, Col, InputGroup, FormControl, Button } from 'react-bootstrap'
+import { Form, Container, Row, Col } from 'react-bootstrap'
 import { withTracker } from 'meteor/react-meteor-data';
+import { useToasts } from 'react-toast-notifications'
 
 import { Meals } from '../../api/meals'
 import MealList from './MealList';
@@ -231,7 +232,7 @@ class MealFilter extends Component {
                                     onChange={this.setMealName.bind(this)} />
                             </Form.Group>
                         </Form>
-                        <p className="mt-3"><strong>
+                        <p className="mt-3 ml-3"><strong>
                             Filtros aplicados:
                         </strong></p>
                         <ul>
