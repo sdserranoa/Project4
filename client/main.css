@@ -291,7 +291,7 @@ body {
   transition: box-shadow 0.5s;
 }
 
-.search-meal-input {
+input[type=text].search-meal-input {
   background-color: rgb(58, 112, 0);
   border: none;
   border-bottom: 1px solid white;
@@ -299,11 +299,11 @@ body {
   color: white;
 }
 
-.search-meal-input::placeholder {
+input[type=text].search-meal-input::placeholder {
   color: rgb(233, 233, 233)
 }
 
-.search-meal-input:focus {
+input[type=text].search-meal-input:focus {
   background-color: rgb(58, 112, 0);
   border: none;
   border-bottom: 1px solid white;
