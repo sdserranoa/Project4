@@ -1,41 +1,82 @@
 import React, { Component } from 'react'
-import { Container, Row, Col, Table } from 'react-bootstrap/';
+import { Container, Row, Col } from 'react-bootstrap/';
 import Order from './Order.js';
-import EnhancedTable from './OrderTable.js';
+import OrderTable from './OrderTable.js';
+import Orders from '../../api/orders';
+import OrderDetail from './OrderDetail.js';
 
 export default class OrderList extends Component {
 
     state = {
         orders: [
             {
-                id:1,
-                menu:'Carne',
-                price:'100',
-                state:'Preparation',
-                addres:'calle2'
+                id: 1,
+                userName: "Mariela Garcia",
+                userId: 1,
+                address: "Calle 1 Carrera 1",
+                total: 20000,
+                delivered: true,
             },
             {
-                id:2,
-                menu:'Carne1',
-                price:'100',
-                state:'Preparation',
-                addres:'calle2'
+                id: 2,
+                userName: "Juan Gonzales",
+                userId: 2,
+                address: "Calle 1 Carrera 1",
+                total: 30000,
+                delivered: false,
             },
             {
-                id:3,
-                menu:'Carne2',
-                price:'100',
-                state:'Preparation',
-                addres:'calle2'
+                id: 3,
+                userName: "Camilo Martinez",
+                userId: 2,
+                address: "Calle 1 Carrera 1",
+                total: 40000,
+                delivered: false,
             },
             {
-                id:4,
-                menu:'Carne3',
-                price:'100',
-                state:'Preparation',
-                addres:'calle2'
+                id: 4,
+                userName: "Santiago Torres",
+                userId: 2,
+                address: "Calle 1 Carrera 1",
+                total: 60000,
+                delivered: true,
+            },
+            {
+                id: 5,
+                userName: "Santiago Torres",
+                userId: 2,
+                address: "Calle 1 Carrera 1",
+                total: 50000,
+                delivered: true,
+            },
+        ],
+        renderDetail: {
+            render: false,
+            current: 0,
+        }
+    };
+
+    handleDetail = id => {
+        this.setState({
+            renderDetail: {
+                redner: true,
+                current: id,
             }
-        ]
+        })
+    }
+
+    renderDetail = () =>{
+        if(this.state.renderDetail.render){
+            return(
+                <OrderDetail detail={this.state.tasks.filter(t => t.id == this.state.renderDetail.current)} />
+            )
+        } else {
+            return(
+                <div>
+                    <h1>No selected detail</h1>
+                </div>
+            )
+        }
     }
 
     render() {
@@ -46,7 +87,26 @@ export default class OrderList extends Component {
                     <hr></hr>
                     <Row>
                         <Col>
-                            <EnhancedTable/>
+                            {/*<table>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>
+                                            <button onClick={()=>this.state.sortBy('userName')}>User Name</button>
+                                        </th>
+                                        <th>Address</th>
+                                        <th>Total</th>
+                                        <th>Delivered</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {this.state.orders.map(t => <Order key={t.id} order={t} />)}
+                                </tbody>
+                            </table>*/}
+                            <OrderTable orders={this.state.orders} />
+                        </Col>
+                        <Col>
+                            {this.renderDetail()}
                         </Col>
                     </Row>
                 </Container>
