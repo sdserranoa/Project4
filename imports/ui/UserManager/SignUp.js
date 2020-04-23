@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
-//import { withTracker } from 'meteor/react-meteor-data';
 import zxcvbn from 'zxcvbn';
-//import '../../api/users.js';
-import { Accounts } from 'meteor/accounts-base';
+//import { Accounts } from 'meteor/accounts-base';
+import * as EmailValidator from "email-validator";
+import { Link } from 'react-router-dom';
+
+
 
 
 class SignUp extends Component {
@@ -41,7 +43,12 @@ class SignUp extends Component {
 
     onEmailChange(e) {
         this.setState({ email: e.target.value });
-        this.clearValidationErr("email");
+        this.clearValidationErr("email1");
+        this.clearValidationErr("email2");
+        if (!EmailValidator.validate(e.target.value)) {
+            console.log('es invalido el email');
+            this.showValidationErr("email2", "This email appears to be invalid");
+        }
     }
 
     onPasswordChange(e) {
@@ -61,7 +68,7 @@ class SignUp extends Component {
             this.showValidationErr("username", "Username can't be empty!");
         }
         if (this.state.email == "") {
-            this.showValidationErr("email", "Email can't be empty!");
+            this.showValidationErr("email1", "Email can't be empty!");
         }
         if (this.state.password == "") {
             this.showValidationErr("password", "Password can't be empty!");
@@ -74,7 +81,6 @@ class SignUp extends Component {
         //pasword Strength
         const { pwdscore, pwdsuggestions } = this.state;
         
-
         //NULL by default (help us check when rendering)
         let usernameErr = null, passwordErr = null, emailErr = null;
         //Loop and find which ones has the error
@@ -86,11 +92,8 @@ class SignUp extends Component {
             if (err.elm == "password") {
                 passwordErr = err.msg;
             }
-            if (err.elm == "email") {
+            if (err.elm.startsWith("email") ) {
                 emailErr = err.msg;
-                if(err.msg == "That's an incorrect email!") {
-                    emailErr = err.msg;
-                }
             }
             
             //No (else if or else) statements cause we need to check for all possible element
@@ -136,7 +139,7 @@ class SignUp extends Component {
                             </Row>
                         </Container>}
                     </div>
-                    <button type="button" className="login-btn" onClick={this.submitRegister.bind(this)}>Register</button>
+                    <button type="button" className="login-btn" onClick={this.submitRegister.bind(this)}><Link to="/">Register</Link></button>
                 </div>
             </div>
         );
