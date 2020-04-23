@@ -8,7 +8,7 @@ class ChatApp extends React.Component {
   socket = {};
   constructor(props) {
     super(props);
-    this.state = { messages: [{username: "Soporte",message: "¿En que podemos ayudarte?"}]  };
+    this.state = { messages: [{username: "Support",message: "What can we help you with?"}]  };
     this.sendHandler = this.sendHandler.bind(this);
     
   
@@ -41,7 +41,7 @@ class ChatApp extends React.Component {
   render() {
     return (
       <div className="Container">
-        <h3>Chatea con soporte</h3>
+        <h3>Chat with support</h3>
         <Messages messages={this.state.messages} />
         <ChatInput onSend={this.sendHandler} />
       </div>
