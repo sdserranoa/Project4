@@ -13,7 +13,7 @@ export default class Meal extends Component {
             <Link to={"/meals/" + meal.id} className="card-link">
                 < div className="meal-card">
                     <Container fluid>
-                        <Row className="justify-content-md-center align-items-center">
+                        <Row className="justify-content-md-center align-items-center" style={{ cursor: 'pointer' }}>
                             <Col lg={3} className="text-center">
                                 <Image className="meal-thumbnail" src={meal.images[0]} roundedCircle alt={meal.name + " imagen"} />
                             </Col>

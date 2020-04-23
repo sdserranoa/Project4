@@ -80,11 +80,19 @@ export default class OrderList extends Component {
     }
 
     render() {
+        
+        const filteredOrders=
+            this.state.orders.filter(order=>{
+                
+                return order.name.toLowerCase().includes(this.state.inputValue.toLowerCase())
+            })
+    
         return (
             <div>
                 <Container fluid="true">
                     <h1 style={{ textAlign: "center" }}>Orders</h1>
                     <hr></hr>
+                    <input type="text" id="min" name="min" placeholder="Search" value={this.state.inputValue} onChange={this.orderFilterOnChange}></input>
                     <Row>
                         <Col>
                             {/*<table>
