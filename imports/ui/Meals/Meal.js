@@ -28,7 +28,7 @@ export default class Meal extends Component {
                             </Col>
                         </Row>
                     </Link>
-                    <Row>
+                    <Row className="w-100 text-right">
                         <CartButton mealName={meal.name} />
                     </Row>
                 </Container>

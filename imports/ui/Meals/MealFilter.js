@@ -240,6 +240,7 @@ class MealFilter extends Component {
                                 <li key={filter}>{filter}</li>
                             ))}
                         </ul>
+                        <p>Se encontraron {filteredMeals.length} comidas</p>
                         <MealList meals={filteredMeals} />
                     </Col>
                 </Row>
