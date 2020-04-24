@@ -7,7 +7,6 @@ import Contact from './Contact.js';
 import Restaurants from './Restaurants.js';
 import UserWrap from './UserManager/UserWrap.js';
 import Orders from './Order/OrderList.js';
-import Meals from './Meals/MealList';
 import MealDetail from './Meals/MealDetail';
 import { Meteor } from 'meteor/meteor';
 import ChatApp from './chat/ChatApp';
