@@ -47,7 +47,7 @@ export default class Navigation extends Component {
     render() {
         return (
             <div>
-                <Navbar bg="light" expand="lg">
+                <Navbar bg="light" expand="lg" className="fixed-top">
                     <Navbar.Brand href="/">EasyDiets</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
