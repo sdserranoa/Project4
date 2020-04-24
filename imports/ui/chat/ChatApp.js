@@ -3,7 +3,7 @@ import React from 'react';
 import io from 'socket.io-client';
 import Messages from './Messages';
 import ChatInput from './ChatInput';
-
+import { Card, Container, Row, Col, Toast } from 'react-bootstrap'
 class ChatApp extends React.Component {
   socket = {};
   constructor(props) {
@@ -40,10 +40,22 @@ class ChatApp extends React.Component {
 
   render() {
     return (
-      <div className="Container">
+      <div className="container" >
+        <br/>
+        <Row className="row">
+          <Col xs={7}>
+        <h1 >Need any assistance with your order?</h1>
+        <h4> Use the chat on your right and we'll get back at you as soon as possible</h4>
+        </Col>
+        <Col>
+        <Card className="chat">
         <h3>Chat with support</h3>
         <Messages messages={this.state.messages} />
         <ChatInput onSend={this.sendHandler} />
+        </Card>
+        </Col>
+        </Row>
+       
       </div>
     );
   }
