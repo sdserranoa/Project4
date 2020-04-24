@@ -48,6 +48,7 @@ export default class OrderTable extends Component {
             {this.state.orders.map((t,i) => this.renderRow(t,i))}
           </tbody>
         </Table>
+        
       </div>
     )
   }

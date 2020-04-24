@@ -33,13 +33,9 @@ export default class CartButton extends Component {
 
     render() {
         return (
-            <div>
+            <div className="w-100">
                 <Button
                     variant="outline-primary"
-                    style={{
-                        marginRight: '15px',
-                        marginLeft: 'auto'
-                    }}
                     onClick={this.handleClick.bind(this)}>
                     Add to Cart <CartIcon />
                 </Button>

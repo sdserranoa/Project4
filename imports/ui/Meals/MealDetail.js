@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withTracker } from 'meteor/react-meteor-data';
-import { Container, Row, Carousel, Image, Col, Table, Link } from 'react-bootstrap'
+import { Container, Row, Carousel, Image, Col, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import { Meals } from '../../api/meals'
 import CartButton from '../cart/CartButton'
@@ -17,8 +18,8 @@ class MealDetail extends Component {
         const meal = temp[0]
 
         return (
-            <Container fluid role="contentinfo">
-                <a href="/meals"><BackIcon /> Volver a la lista de comidas</a>
+            <Container fluid role="contentinfo" className="mb-3">
+                <Link to="/meals"><BackIcon /> Volver a la lista de comidas</Link>
                 <h1>Información Adicional: {meal.name}</h1>
                 <Row>
                     <Col>
@@ -28,63 +29,66 @@ class MealDetail extends Component {
                                 <p style={{ color: 'green' }}>Precio unidad: <strong>${meal.price}</strong></p>
                             </Col>
                             <Col>
-                                <CartButton />
+                                <CartButton mealName={meal.name} />
+                            </Col>
+                            <hr />
+
+                            <Col xs={12}>
+                                <h2>Información Nutricional</h2>
+                                <Table responsive hover>
+                                    <thead>
+                                        <tr>
+                                            <th>Componente</th>
+                                            <th>Cantidad / Unidad</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Calorías</td>
+                                            <td>{meal.calories}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Grasas</td>
+                                            <td>{meal.fats}g</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Carbohidratos</td>
+                                            <td>{meal.carbs}g</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Proteínas</td>
+                                            <td>{meal.proteins}g</td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
+                            </Col>
+                            <hr />
+
+                            <Col xs={12}>
+                                <h2>Ingredientes</h2>
+                                <Table responsive hover>
+                                    <thead>
+                                        <tr>
+                                            <th>Ingrediente</th>
+                                            <th>Cantidad (g)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {meal.ingredients.map((ingredient, index) => (
+                                            <tr key={index}>
+                                                <td>{ingredient.name}</td>
+                                                <td>{ingredient.quantity}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </Table>
                             </Col>
                         </Row>
-                        <hr />
-
-                        <h2>Información Nutricional</h2>
-                        <Table responsive hover>
-                            <thead>
-                                <tr>
-                                    <th>Componente</th>
-                                    <th>Cantidad / Unidad</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Calorías</td>
-                                    <td>{meal.calories}</td>
-                                </tr>
-                                <tr>
-                                    <td>Grasas</td>
-                                    <td>{meal.fats}g</td>
-                                </tr>
-                                <tr>
-                                    <td>Carbohidratos</td>
-                                    <td>{meal.carbs}g</td>
-                                </tr>
-                                <tr>
-                                    <td>Proteínas</td>
-                                    <td>{meal.proteins}g</td>
-                                </tr>
-                            </tbody>
-                        </Table>
-                        <hr />
-
-                        <h2>Ingredientes</h2>
-                        <Table responsive hover>
-                            <thead>
-                                <tr>
-                                    <th>Ingrediente</th>
-                                    <th>Cantidad (g)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {meal.ingredients.map(ingredient => (
-                                    <tr>
-                                        <td>{ingredient.name}</td>
-                                        <td>{ingredient.quantity}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </Table>
-
                     </Col>
                     <Col xl={7} md={5}>
                         <Carousel style={{ maxHeight: '500px' }}>
                             {meal.images.map((image, index) => (
-                                < Carousel.Item >
+                                < Carousel.Item key={index}>
                                     <Image
                                         className="d-block w-100"
                                         src={image}
