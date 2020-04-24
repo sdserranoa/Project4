@@ -9,6 +9,7 @@ import UserWrap from './UserManager/UserWrap.js';
 import Orders from './Order/OrderList.js';
 import Meals from './Meals/MealList';
 import MealDetail from './Meals/MealDetail';
+import Profile from './UserManager/Profile.js';
 import { Meteor } from 'meteor/meteor';
 import ChatApp from './chat/ChatApp';
 import MealFilter from './Meals/MealFilter.js';
@@ -56,7 +57,7 @@ class Index extends Component {
 
     }
     singup(email, username, password) {
-        Accounts.createUser({ email, username, password }, (err) => {
+        Accounts.createUser({ email, username, password, profile:{rol:"user"} }, (err) => {
             if (err) {
                 console.log(err.reason);
                 //<ToastU title={"There was an error"} description={err.reason} />
@@ -66,7 +67,6 @@ class Index extends Component {
             }
             this.getMeteorData();
         });
-
     }
 
 
@@ -82,7 +82,7 @@ class Index extends Component {
                     <Route exact path="/meals" component={MealFilter} />
                     <Route path="/meals/:id" component={MealDetail} />
                     <Route path="/chat" component={ChatApp} />
-
+                    <Route path="/profile" component={Profile} />
                     <Route path="/SignUp" render={props => <UserWrap singup={this.singup} login={this.login} />} />
                 </Router>
         );

@@ -213,6 +213,7 @@ body {
 }
 
 .login-btn {
+  width: 300px;
   padding: 0;
   border: 0;
   font-size: 18px;
@@ -338,3 +339,5 @@ input[type=text].search-meal-input:focus {
   border-radius: 0px;
   color: white;
 }
+
+/* Meals styles */
