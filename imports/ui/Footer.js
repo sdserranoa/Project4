@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function renderChat() {
     if (Meteor.user() != null) {
         return (
-            <Button><Link to="/chat" className="link-style">Chat with us</Link></Button>
+            <Link to="/chat" className="link-style"><Button>Chat with us</Button></Link>
         )
     } else {
 

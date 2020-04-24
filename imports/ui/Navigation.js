@@ -23,17 +23,17 @@ export default class Navigation extends Component {
 
     constructor(props) {
         super(props);
-        this.state={ showAlertLogout: false}
+        this.state = { showAlertLogout: false }
         //this.state={logoutON:this.props.isAuthenticated}
     }
     logoutReload(e) {
         console.log('entra a logoutReload');
-        this.setState({showAlertLogout:true},function() {
-            this.props.logout(); 
+        this.setState({ showAlertLogout: true }, function () {
+            this.props.logout();
             console.log(this.state.showAlertLogout);
         });
-        
-        
+
+
         //this.t1();
         //<ToastU title={"You logged out succesfully!"} description={"Congrats! This is the first step into a healthy lifestyle!"} />
     }
@@ -44,8 +44,8 @@ export default class Navigation extends Component {
         }).bind(this);
     }
 
-    
-render() {
+
+    render() {
         return (
             <div>
                 <Navbar bg="light" expand="lg">
@@ -58,8 +58,8 @@ render() {
                             <Nav.Link><Link to="/Orders">Orders</Link></Nav.Link>
                             <Nav.Link><Link to="/meals">Meals</Link></Nav.Link>
                             {Meteor.userId() &&
-                            <Nav.Link><Link to="/chat">Chat</Link></Nav.Link>
-                             }
+                                <Nav.Link><Link to="/chat">Chat</Link></Nav.Link>
+                            }
                         </Nav>
                         <Form inline>
                             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -70,20 +70,20 @@ render() {
                                 <Nav.Link ><Link to="/SignUp" id="SignUpLink" variant="dark">Sign up</Link>
                                 </Nav.Link>
                             }
-                            
+
                             {Meteor.userId() &&
                                 <Nav.Link ><Link to="/" onClick={this.logoutReload.bind(this)} id="SignUpLink" variant="dark" >Log out </Link>
                                 </Nav.Link>
                             }
-  
+
                             {Meteor.userId() &&
-                                <Nav.Link ><Link to="/" id="currentUsername" >{Meteor.user().username[0].toUpperCase()+Meteor.user().username.slice(1).toLowerCase()}</Link>
-                                    </Nav.Link>
+                                <Nav.Link ><Link to="/" id="currentUsername" >{Meteor.user().username[0].toUpperCase() + Meteor.user().username.slice(1).toLowerCase()}</Link>
+                                </Nav.Link>
                             }
 
                         </Nav>
                     </Navbar.Collapse>
-                </Navbar> 
+                </Navbar>
                 <Snackbar
                     anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
                     open={this.state.showAlert}

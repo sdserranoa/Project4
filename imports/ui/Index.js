@@ -72,13 +72,14 @@ class Index extends Component {
 
     render() {
         return (
+            <Router>
                 <Navigation logout={this.logout} />
                 <Route path="/" exact component={Home} />
                 <Route path="/restaurant" component={Restaurants} />
                 <Route path="/diets" component={Diets} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/orders" component={Orders} />
-                <Route exact path="/meals" component={MealFilter} />
+                <Route path="/meals" exact component={MealFilter} />
                 <Route path="/meals/:id" component={MealDetail} />
                 <Route path="/chat" component={ChatApp} />
                 <Route path="/SignUp" render={props => <UserWrap singup={this.singup} login={this.login} />} />

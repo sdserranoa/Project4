@@ -7,10 +7,10 @@ export default class OrderTable extends Component {
     orders: this.props.orders,
   }
 
-  renderRow = t => {
+  renderRow = (t,i) => {
     if (t.delivered) {
       return (
-        <tr bgcolor="#8DEF70" onClick={() => this.props.onDetail(t.id)}>
+        <tr key={i} bgcolor="#8DEF70" onClick={() => this.props.onDetail(t.id)}>
           <td>{t.id}</td>
           <td>{t.userName}</td>
           <td>{t.address}</td>
@@ -20,7 +20,7 @@ export default class OrderTable extends Component {
       )
     } else {
       return (
-        <tr bgcolor="#E06060" onClick={() => this.props.onDetail(t.id)}>
+        <tr key={i} bgcolor="#E06060" onClick={() => this.props.onDetail(t.id)}>
           <td>{t.id}</td>
           <td>{t.userName}</td>
           <td>{t.address}</td>
