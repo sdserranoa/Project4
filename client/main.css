@@ -1,9 +1,9 @@
-a.nav-link>a {
-  color: #ff5100;
+.nav-link {
+  color: #ff5100 !important;
 }
 
-a.nav-link>a:hover {
-  color: #28a745;
+.nav-link:hover {
+  color: #28a745 !important;
 }
 
 button>a {
