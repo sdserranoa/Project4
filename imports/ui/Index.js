@@ -7,11 +7,11 @@ import Contact from './Contact.js';
 import Restaurants from './Restaurants.js';
 import UserWrap from './UserManager/UserWrap.js';
 import Orders from './Order/OrderList.js';
-import Meals from './Meals/MealList';
 import MealDetail from './Meals/MealDetail';
 import { Meteor } from 'meteor/meteor';
 import ChatApp from './chat/ChatApp';
 import MealFilter from './Meals/MealFilter.js';
+import Footer from './Footer';
 //import ToastU from './UserManager/Toast.js'
 
 
@@ -82,8 +82,8 @@ class Index extends Component {
                 <Route exact path="/meals" component={MealFilter} />
                 <Route path="/meals/:id" component={MealDetail} />
                 <Route path="/chat" component={ChatApp} />
-
                 <Route path="/SignUp" render={props => <UserWrap singup={this.singup} login={this.login} />} />
+                <Route path="/" component={Footer} />
             </Router>
         );
     };

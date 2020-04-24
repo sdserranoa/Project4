@@ -57,6 +57,12 @@ body {
   padding: .375rem .75rem;
   font-size: 1rem;
   border-radius: .25rem;
+  text-decoration:none;
+}
+
+#SignUpLink:hover {
+  background-color: #ff5100;
+  color: white;
 }
 
 #currentUsername{
