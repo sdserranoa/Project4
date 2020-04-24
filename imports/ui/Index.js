@@ -72,7 +72,6 @@ class Index extends Component {
 
     render() {
         return (
-            <Router>
                 <Navigation logout={this.logout} />
                 <Route path="/" exact component={Home} />
                 <Route path="/restaurant" component={Restaurants} />
