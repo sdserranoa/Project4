@@ -61,17 +61,17 @@ export default class Navigation extends Component {
                         </Form>
                         <Nav>
                             {!Meteor.userId() &&
-                                <Nav.Link ><Link to="/SignUp" id="SignUpLink" variant="dark">Sign up</Link>
+                                <Nav.Link href="/SignUp" id="SignUpLink" variant="dark">Sign up
                                 </Nav.Link>
                             }
 
                             {Meteor.userId() &&
-                                <Nav.Link ><Link to="/" onClick={this.logoutReload.bind(this)} id="SignUpLink" variant="dark" >Log out </Link>
+                                <Nav.Link href="/" onClick={this.logoutReload.bind(this)} id="SignUpLink" variant="dark">Log out
                                 </Nav.Link>
                             }
 
                             {Meteor.userId() &&
-                                <Nav.Link ><Link to="/" id="currentUsername" >{/*Meteor.user().username[0].toUpperCase()+Meteor.user().username.slice(1).toLowerCase()*/}</Link>
+                                <Nav.Link href="/" id="currentUsername">{/*Meteor.user().username[0].toUpperCase()+Meteor.user().username.slice(1).toLowerCase()*/}
                                 </Nav.Link>
                             }
 
