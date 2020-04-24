@@ -52,7 +52,7 @@ export default class OrderList extends Component {
         ],
         renderDetail: {
             render: false,
-            current: 0,
+            current: 1,
         }
     };
 
@@ -91,22 +91,6 @@ export default class OrderList extends Component {
                     <input type="text" id="min" name="min" placeholder="Search" value={this.state.inputValue} onChange={this.orderFilterOnChange}></input>
                     <Row>
                         <Col>
-                            {/*<table>
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>
-                                            <button onClick={()=>this.state.sortBy('userName')}>User Name</button>
-                                        </th>
-                                        <th>Address</th>
-                                        <th>Total</th>
-                                        <th>Delivered</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {this.state.orders.map(t => <Order key={t.id} order={t} />)}
-                                </tbody>
-                            </table>*/}
                             <OrderTable orders={this.state.orders} onDetail={this.handleDetail} />
                         </Col>
                         <Col>
