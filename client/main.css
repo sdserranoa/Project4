@@ -6,12 +6,12 @@ a.nav-link>a:hover {
   color: #28a745;
 }
 
-button >a {
+button>a {
   color: black;
   width: fit-content(max-content);
 }
 
-button >a:hover {
+button>a:hover {
   color: white;
   text-decoration: none;
   width: fit-content(max-content);
@@ -36,6 +36,7 @@ body {
   font-family: sans-serif;
   margin: 0;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .mr-auto1 {
@@ -57,7 +58,7 @@ body {
   padding: .375rem .75rem;
   font-size: 1rem;
   border-radius: .25rem;
-  text-decoration:none;
+  text-decoration: none;
 }
 
 #SignUpLink:hover {
@@ -65,7 +66,7 @@ body {
   color: white;
 }
 
-#currentUsername{
+#currentUsername {
   color: #3A7000;
   display: inline-block;
   font-weight: 400;
