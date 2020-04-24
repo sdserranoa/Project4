@@ -70,7 +70,7 @@ class Home extends Component {
                 {Meteor.users.find({}).map(u => <li key={u._id}>{u.username}</li>)}
                     
                 </ul>
-                <ImageGallery items={images} />;
+                <ImageGallery items={images} />
             </div>
         )
     }
