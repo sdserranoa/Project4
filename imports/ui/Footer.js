@@ -38,7 +38,7 @@ function Footer() {
                                     </ul>
                                 </Col>
                                 <Col md={3} sm={6}>
-                                    <h4>Quik Links</h4>
+                                    <h4>Quick Links</h4>
                                     <ul className="list-unstyled">
 
                                         <li><Link className="link-style" to="/">Home</Link></li>
