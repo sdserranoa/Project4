@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './Home.js';
 import Diets from './Diets.js';
 import Contact from './Contact.js';
-import Restaurants from './Restaurants.js';
 import UserWrap from './UserManager/UserWrap.js';
 import Orders from './Order/OrderList.js';
 import MealDetail from './Meals/MealDetail';
+import Profile from './UserManager/Profile.js';
 import { Meteor } from 'meteor/meteor';
 import ChatApp from './chat/ChatApp';
 import MealFilter from './Meals/MealFilter.js';
@@ -56,7 +56,7 @@ class Index extends Component {
 
     }
     singup(email, username, password) {
-        Accounts.createUser({ email, username, password }, (err) => {
+        Accounts.createUser({ email, username, password, profile:{rol:"user"} }, (err) => {
             if (err) {
                 console.log(err.reason);
                 //<ToastU title={"There was an error"} description={err.reason} />
@@ -66,7 +66,6 @@ class Index extends Component {
             }
             this.getMeteorData();
         });
-
     }
 
 
@@ -75,16 +74,17 @@ class Index extends Component {
             <Router>
                 <Navigation logout={this.logout} />
                 <Route path="/" exact component={Home} />
-                <Route path="/restaurant" component={Restaurants} />
                 <Route path="/diets" component={Diets} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/orders" component={Orders} />
                 <Route path="/meals" exact component={MealFilter} />
                 <Route path="/meals/:id" component={MealDetail} />
                 <Route path="/chat" component={ChatApp} />
+                <Route path="/profile" component={Profile} />
                 <Route path="/SignUp" render={props => <UserWrap singup={this.singup} login={this.login} />} />
-                <Route path="/" component={Footer} />
+                <Footer/>
             </Router>
+            
         );
     };
 }
