@@ -34,15 +34,14 @@ function Footer() {
                                 <Col md={3} sm={6}>
                                     <h4>Our company</h4>
                                     <ul className="list-unstyled">
-                                        <li>Lorem ipsum</li>
-                                        <li>Lorem ipsum</li>
-                                        <li>Lorem ipsum</li>
-                                        <li>Lorem ipsum</li>
+                                        <li><p>Our company is dedicated to improve our clients health by offering balanced meals and daily delivers to workplaces or home</p></li>
                                     </ul>
                                 </Col>
                                 <Col md={3} sm={6}>
-                                    <h4>Products</h4>
+                                    <h4>Quik Links</h4>
                                     <ul className="list-unstyled">
+
+                                        <li><Link className="link-style" to="/">Home</Link></li>
                                         <li><Link className="link-style" to="/diets">Diets</Link></li>
                                         <li><Link className="link-style" to="/meals">Meals</Link></li>
 
@@ -56,7 +55,7 @@ function Footer() {
                                             <Form.Control type="email" placeholder="name@example.com" />
                                         </Form.Group>
                                         <Form.Group controlId="textForm.ControlTextarea1">
-                                            <Form.Label>Example textarea</Form.Label>
+                                            <Form.Label>Message</Form.Label>
                                             <Form.Control as="textarea" rows="3" />
                                         </Form.Group>
                                     </Form>
