@@ -7,7 +7,7 @@ import Index from "../imports/ui/Index.js";
 
 
 Meteor.startup(() => {
-  render(<Index />, document.getElementById("root"));
+  render(<Index  />, document.getElementById("root") );
 });
 
 
