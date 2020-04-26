@@ -30,6 +30,18 @@ export default class Navigation extends Component {
         }).bind(this);
     }
 
+    renderOrders(){
+        if(Meteor.user().profile.rol == "admin"){
+            return(
+                <Link to="/Orders" className="nav-link">Orders</Link>
+            )
+        } else {
+            return(
+                <div></div>
+            )
+        }
+    }
+
     render() {
         return (
             <div>

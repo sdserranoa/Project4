@@ -14,6 +14,7 @@ import MealFilter from './Meals/MealFilter.js';
 import Footer from './Footer/Footer';
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import { Link } from "react-router-dom";
+import Cart from './cart/Cart'
 import { MdHome, MdSettings, MdEmail, MdInfo, MdWeb } from 'react-icons/md'
 
 import Dashboard from './Dashboard/Dashboard'
@@ -82,8 +83,8 @@ class Index extends Component {
             
             <Router>
                 <Navigation logout={this.logout} />
-              
-                <Route path="/" exact component={Home}  />
+          
+                <Route path="/" exact component={Home} />
                 <Route path="/diets" component={Diets} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/orders" component={Orders} />
@@ -92,6 +93,7 @@ class Index extends Component {
                 <Route path="/dashboard" component={Dashboard} />
                 <Route path="/chat" component={ChatApp} />
                 <Route path="/profile" component={Profile} />
+                <Route path="/cart" component={Cart}/>
                 <Route path="/SignUp" render={props => <UserWrap singup={this.singup} login={this.login} />} />
             
     
