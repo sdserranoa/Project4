@@ -8,7 +8,7 @@ export default class Profile extends Component {
             <div id="profile">
                 
                 {Meteor.user().profile.rol == "admin" &&
-                    <div><h1>Profiles:</h1>
+                    <div><h1 id="profileHeader">Profiles:</h1>
                         {Meteor.users.find({}).map(u =>
                             < div className="meal-card" key={u._id}>
                                 <Container fluid>
@@ -27,7 +27,7 @@ export default class Profile extends Component {
                         )}
                     </div>}
                 {Meteor.user().profile.rol != "admin" &&
-                    <div><h1>Profile:</h1>
+                    <div><h1 id="profileHeader">Profile:</h1>
                         < div className="meal-card" >
                     <Container fluid>
                         <Row className="justify-content-md-center align-items-center" style={{ cursor: 'pointer' }}>

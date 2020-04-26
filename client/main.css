@@ -29,6 +29,10 @@ button>a:hover {
   cursor: pointer;
 }
 
+.gallery{
+margin-top: 5.5%;
+}
+
 /*    ===============================================User Wrap=================================    */
 
 body {
@@ -368,4 +372,8 @@ ol {
   margin-top: 10%;
   margin-bottom: 5%;
 }
+ #profileHeader{
+   text-align: center;
+   font-weight: bold;
+ }
 

@@ -30,8 +30,8 @@ class Home extends Component {
 
     render() {
         return (
-            <div>              
-                <Carousel>
+            <div className="gallery">              
+                {/*<Carousel>
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
@@ -67,14 +67,7 @@ class Home extends Component {
                             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
-                </Carousel>
-
-                Home
-                {/*console.log(Meteor.users.find({}))*/}
-                <ul>
-                {Meteor.users.find({}).map(u => <li key={u._id}>{u.username}</li>)}
-                    
-                </ul>
+                </Carousel>*/}
                 <ImageGallery items={images} />
             </div>
         )

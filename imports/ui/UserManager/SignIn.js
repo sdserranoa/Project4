@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
-/*import { Accounts } from 'meteor/accounts-base';*/
 import { Link } from 'react-router-dom';
-import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
-/*
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-*/
+
 
 
 class SignIn extends Component {
@@ -47,7 +41,6 @@ class SignIn extends Component {
 
 
     submitLogin(e) {
-        
         e.preventDefault();
         if (this.state.username == "") {
             this.showValidationErr("username", "Username can't be empty!");
