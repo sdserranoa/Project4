@@ -407,3 +407,11 @@ input[type=text].search-meal-input:focus {
   font-size: 18px;
   font-weight: bold;
 }
+
+.rating-star {
+  color: rgb(254, 191, 97)
+}
+
+.rating-star-input {
+  cursor: pointer;
+}
