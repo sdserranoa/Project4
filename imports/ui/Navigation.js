@@ -23,17 +23,17 @@ export default class Navigation extends Component {
 
     constructor(props) {
         super(props);
-        this.state={ showAlertLogout: false}
+        this.state = { showAlertLogout: false }
         //this.state={logoutON:this.props.isAuthenticated}
     }
     logoutReload(e) {
         console.log('entra a logoutReload');
-        this.setState({showAlertLogout:true},function() {
-            this.props.logout(); 
+        this.setState({ showAlertLogout: true }, function () {
+            this.props.logout();
             console.log(this.state.showAlertLogout);
         });
-        
-        
+
+
         //this.t1();
         //<ToastU title={"You logged out succesfully!"} description={"Congrats! This is the first step into a healthy lifestyle!"} />
     }
@@ -44,22 +44,21 @@ export default class Navigation extends Component {
         }).bind(this);
     }
 
-    
-render() {
+    render() {
         return (
             <div>
-                <Navbar bg="light" expand="lg">
+                <Navbar bg="light" expand="lg" className="fixed-top">
                     <Navbar.Brand href="/">EasyDiets</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link><Link to="/" className="link">Home</Link></Nav.Link>
-                            <Nav.Link><Link to="/diets">Diets</Link></Nav.Link>
-                            <Nav.Link><Link to="/Orders">Orders</Link></Nav.Link>
-                            <Nav.Link><Link to="/meals">Meals</Link></Nav.Link>
+                            <Nav.Link href="/">Home</Nav.Link>
+                            <Nav.Link href="/diets">Diets</Nav.Link>
+                            <Nav.Link href="/Orders">Orders</Nav.Link>
+                            <Nav.Link href="/meals">Meals</Nav.Link>
                             {Meteor.userId() &&
-                            <Nav.Link><Link to="/chat">Chat</Link></Nav.Link>
-                             }
+                                <Nav.Link href="/chat">Chat</Nav.Link>
+                            }
                         </Nav>
                         <Form inline>
                             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -67,23 +66,23 @@ render() {
                         </Form>
                         <Nav>
                             {!Meteor.userId() &&
-                                <Nav.Link ><Link to="/SignUp" id="SignUpLink" variant="dark">Sign up</Link>
+                                <Nav.Link href="/SignUp" id="SignUpLink" variant="dark">Sign up
                                 </Nav.Link>
                             }
-                            
+
                             {Meteor.userId() &&
-                                <Nav.Link ><Link to="/" onClick={this.logoutReload.bind(this)} id="SignUpLink" variant="dark" >Log out </Link>
+                                <Nav.Link href="/" onClick={this.logoutReload.bind(this)} id="SignUpLink" variant="dark">Log out
                                 </Nav.Link>
                             }
-  
+
                             {Meteor.userId() &&
-                                <Nav.Link ><Link to="/" id="currentUsername" >{Meteor.user().username[0].toUpperCase()+Meteor.user().username.slice(1).toLowerCase()}</Link>
-                                    </Nav.Link>
+                                <Nav.Link href="/" id="currentUsername">{Meteor.user().username[0].toUpperCase() + Meteor.user().username.slice(1).toLowerCase()}
+                                </Nav.Link>
                             }
 
                         </Nav>
                     </Navbar.Collapse>
-                </Navbar> 
+                </Navbar>
                 <Snackbar
                     anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
                     open={this.state.showAlert}
@@ -93,7 +92,7 @@ render() {
                         ¡alerta!
             </Alert>
                 </Snackbar>
-            </div>
+            </div >
         );
     };
 }
