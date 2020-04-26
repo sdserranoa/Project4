@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './Home.js';
 import Diets from './Diets.js';
 import Contact from './Contact.js';
-import Restaurants from './Restaurants.js';
 import UserWrap from './UserManager/UserWrap.js';
 import Orders from './Order/OrderList.js';
 import MealDetail from './Meals/MealDetail';
@@ -75,7 +74,6 @@ class Index extends Component {
             <Router>
                 <Navigation logout={this.logout} />
                 <Route path="/" exact component={Home} />
-                <Route path="/restaurant" component={Restaurants} />
                 <Route path="/diets" component={Diets} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/orders" component={Orders} />
@@ -84,8 +82,9 @@ class Index extends Component {
                 <Route path="/chat" component={ChatApp} />
                 <Route path="/profile" component={Profile} />
                 <Route path="/SignUp" render={props => <UserWrap singup={this.singup} login={this.login} />} />
-                <Route path="/" component={Footer} />
+                <Footer/>
             </Router>
+            
         );
     };
 }
