@@ -25,6 +25,10 @@ button>a:hover {
   cursor: pointer;
 }
 
+.gallery{
+margin-top: 5.5%;
+}
+
 /*    ===============================================User Wrap=================================    */
 
 body {
@@ -55,6 +59,7 @@ body {
   font-size: 1rem;
   border-radius: .25rem;
   text-decoration: none;
+  margin: 0 15px;
 }
 
 #SignUpLink:hover {
@@ -69,12 +74,14 @@ body {
   cursor: pointer;
   background-color: transparent;
   border-bottom: 3px solid #3A7000;
-  /*border: 1px solid #ff5100;
-  border-top-color: #ff5100;
-  border-right-color: #ff5100;
-  border-left-color: #ff5100;*/
-  padding: .375rem .75rem 0;
+  text-decoration: none;
+  padding: 0;
+  margin: .375rem .75rem 0;
   font-size: 1rem;
+}
+#currentUsername:hover {
+  text-decoration: none;
+  color:#ff5100 !important;
 }
 
 #SignInLink {
@@ -102,7 +109,7 @@ body {
 .box-controller {
   background-color: white;
   visibility: visible;
-  display: -webkit-box;
+  display: -webkit-box; 
   display: -ms-flexbox;
   display: flex;
   max-width: 24em;
@@ -343,6 +350,24 @@ input[type=text].search-meal-input:focus {
   border-radius: 0px;
   color: white;
 }
+ol {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-top: 70px;
+}
+
+/* Meals styles */
+
+/*Profile stylex*/
+#profile{
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+ #profileHeader{
+   text-align: center;
+   font-weight: bold;
+ }
 
 /* Dashboard */
 

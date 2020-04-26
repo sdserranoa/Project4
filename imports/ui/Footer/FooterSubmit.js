@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
+import MuiAlert from '@material-ui/lab/Alert';
 import { Button } from 'react-bootstrap'
 import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
 
-/* ICONS */
-import CartIcon from '@material-ui/icons/AddShoppingCartRounded';
 
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-export default class CartButton extends Component {
+export default class FooterSubmit extends Component {
     constructor(props) {
         super(props)
 
@@ -26,9 +24,6 @@ export default class CartButton extends Component {
     }
 
     handleClick() {
-
-        
-
         this.setState({
             showAlert: true
         })
@@ -38,9 +33,8 @@ export default class CartButton extends Component {
         return (
             <div className="w-100">
                 <Button
-                    variant="outline-primary"
                     onClick={this.handleClick.bind(this)}>
-                    Add to Cart <CartIcon />
+                    Submit
                 </Button>
                 <Snackbar
                     anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
@@ -48,7 +42,7 @@ export default class CartButton extends Component {
                     autoHideDuration={6000}
                     onClose={this.handleCloseAlert.bind(this)}>
                     <Alert onClose={this.handleCloseAlert.bind(this)} severity="success">
-                        ¡{this.props.mealName} added to shopping cart!
+                        ¡{this.props.mealName} ¡Message submited! we will respond soon!
                     </Alert>
                 </Snackbar>
             </div>

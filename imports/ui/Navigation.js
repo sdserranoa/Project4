@@ -77,9 +77,9 @@ export default class Navigation extends Component {
                                 </Alert>
                             </Snackbar>
 
-                            {Meteor.userId() &&
+                            {/*Meteor.userId() &&
                                 <Link to="/profile" id="currentUsername">{Meteor.user().username[0].toUpperCase() + Meteor.user().username.slice(1).toLowerCase()}
-                                </Link>
+                                </Link>*/
                             }
                         </Nav>
                     </Navbar.Collapse>
@@ -88,4 +88,3 @@ export default class Navigation extends Component {
         );
     };
 }
-

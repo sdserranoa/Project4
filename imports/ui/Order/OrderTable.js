@@ -18,6 +18,7 @@ export default class OrderTable extends Component {
           <td>{t.userName}</td>
           <td>{t.address}</td>
           <td>{t.total}</td>
+          <td>{t.date}</td>
           <td>{t.delivered.toString()}</td>
         </tr>
       )
@@ -28,6 +29,7 @@ export default class OrderTable extends Component {
           <td>{t.userName}</td>
           <td>{t.address}</td>
           <td>{t.total}</td>
+          <td>{t.date}</td>
           <td>{t.delivered.toString()}</td>
         </tr>
       )
@@ -73,6 +75,7 @@ export default class OrderTable extends Component {
                   <th>User Name</th>
                   <th>Address</th>
                   <th>Total</th>
+                  <td>Date</td>
                   <th>Delivered</th>
                 </tr>
               </thead>

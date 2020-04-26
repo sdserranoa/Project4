@@ -11,11 +11,19 @@ import Profile from './UserManager/Profile.js';
 import { Meteor } from 'meteor/meteor';
 import ChatApp from './chat/ChatApp';
 import MealFilter from './Meals/MealFilter.js';
-import Footer from './Footer';
+import Footer from './Footer/Footer';
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
+import { Link } from "react-router-dom";
 import Dashboard from './Dashboard/Dashboard'
 //import ToastU from './UserManager/Toast.js'
 
-
+const items = [
+    { to: '/', label: 'Home' },
+    { to: '/diets', label: 'Diets' },
+    { to: '/Orders', label: 'Orders' },
+    { to: '/meals', label: 'Meals' },
+    { to: '/chat', label: 'Chat' },
+  ]
 
 class Index extends Component {
     constructor() {
@@ -35,12 +43,13 @@ class Index extends Component {
         Meteor.loginWithPassword(username, password, (err) => {
             if (err) {
                 console.log(err.reason);
-                //<ToastU title={"There was an error"} description={err.reason} />
+                return false
             } else {
                 console.log("You're in!");
-                //<ToastU title={"You're In!"} description={"Great job!"} />
+                this.getMeteorData();
+                return true;
             }
-            this.getMeteorData();
+            
         });
 
     }
@@ -60,20 +69,23 @@ class Index extends Component {
         Accounts.createUser({ email, username, password, profile:{rol:"user"} }, (err) => {
             if (err) {
                 console.log(err.reason);
-                //<ToastU title={"There was an error"} description={err.reason} />
+                return false;
             } else {
+                this.getMeteorData();
                 console.log("You're In");
-                //<ToastU title={"You register succesfully!"} description={"Congrats! This is the first step into a healthy lifestyle!"} />
+                return true;
             }
-            this.getMeteorData();
+            
         });
     }
 
 
     render() {
+       
         return (
             <Router>
                 <Navigation logout={this.logout} />
+          
                 <Route path="/" exact component={Home} />
                 <Route path="/diets" component={Diets} />
                 <Route path="/contact" component={Contact} />
@@ -84,8 +96,18 @@ class Index extends Component {
                 <Route path="/chat" component={ChatApp} />
                 <Route path="/profile" component={Profile} />
                 <Route path="/SignUp" render={props => <UserWrap singup={this.singup} login={this.login} />} />
-                <Footer/>
+                <Breadcrumb>
+ 
+          <Breadcrumb.Item   >
+            {window.location.pathname}
+          </Breadcrumb.Item>
+        
+      </Breadcrumb>
+                <Route path="/" component={Footer} />
+               
             </Router>
+      
+        
             
         );
     };

@@ -30,8 +30,8 @@ class Home extends Component {
 
     render() {
         return (
-            <div>              
-                <Carousel>
+            <div className="gallery">              
+                {/*<Carousel>
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
@@ -67,7 +67,8 @@ class Home extends Component {
                             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
-                </Carousel>
+                </Carousel>*/}
+                <ImageGallery items={images} />
             </div>
         )
     }
