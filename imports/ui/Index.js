@@ -12,9 +12,17 @@ import { Meteor } from 'meteor/meteor';
 import ChatApp from './chat/ChatApp';
 import MealFilter from './Meals/MealFilter.js';
 import Footer from './Footer';
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
+import { Link } from "react-router-dom";
 //import ToastU from './UserManager/Toast.js'
 
-
+const items = [
+    { to: '/', label: 'Home' },
+    { to: '/diets', label: 'Diets' },
+    { to: '/Orders', label: 'Orders' },
+    { to: '/meals', label: 'Meals' },
+    { to: '/chat', label: 'Chat' },
+  ]
 
 class Index extends Component {
     constructor() {
@@ -71,9 +79,11 @@ class Index extends Component {
 
 
     render() {
+       
         return (
             <Router>
                 <Navigation logout={this.logout} />
+          
                 <Route path="/" exact component={Home} />
                 <Route path="/restaurant" component={Restaurants} />
                 <Route path="/diets" component={Diets} />
@@ -83,8 +93,19 @@ class Index extends Component {
                 <Route path="/meals/:id" component={MealDetail} />
                 <Route path="/chat" component={ChatApp} />
                 <Route path="/SignUp" render={props => <UserWrap singup={this.singup} login={this.login} />} />
+                <Breadcrumb>
+ 
+          <Breadcrumb.Item   >
+            {window.location.pathname}
+          </Breadcrumb.Item>
+        
+      </Breadcrumb>
                 <Route path="/" component={Footer} />
+               
             </Router>
+      
+        
+            
         );
     };
 }

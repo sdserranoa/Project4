@@ -68,7 +68,7 @@ class Home extends Component {
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
-
+fukof
                 Home
                 {/*console.log(Meteor.users.find({}))*/}
                 <ul>

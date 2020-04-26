@@ -105,7 +105,7 @@ body {
 .box-controller {
   background-color: white;
   visibility: visible;
-  display: -webkit-box;
+  display: -webkit-box; 
   display: -ms-flexbox;
   display: flex;
   max-width: 24em;
@@ -344,4 +344,10 @@ input[type=text].search-meal-input:focus {
   border-bottom: 1px solid white;
   border-radius: 0px;
   color: white;
+}
+ol {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-top: 70px;
 }
