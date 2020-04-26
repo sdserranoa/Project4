@@ -68,14 +68,6 @@ class Home extends Component {
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
-
-                Home
-                {/*console.log(Meteor.users.find({}))*/}
-                <ul>
-                {Meteor.users.find({}).map(u => <li key={u._id}>{u.username}</li>)}
-                    
-                </ul>
-                <ImageGallery items={images} />
             </div>
         )
     }
