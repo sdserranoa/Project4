@@ -75,7 +75,12 @@ class SignUp extends Component {
         }
 
         this.props.singup(this.state.email, this.state.username, this.state.password);
+        this.clearForm();
     }
+
+    clearForm = () => { 
+        document.getElementById("form-sign").reset();
+      }
 
     render() {
         //pasword Strength
@@ -101,7 +106,7 @@ class SignUp extends Component {
         return (
             <div className="inner-container">
                 <div className="header">Register</div>
-                <div className="box">
+                <form className="box" id="form-sign">
 
                     <div className="input-group">
                         <label htmlFor="username">Username</label>
@@ -140,7 +145,7 @@ class SignUp extends Component {
                         </Container>}
                     </div>
                     <button type="button" className="login-btn" onClick={this.submitRegister.bind(this)}><Link to="/">Register</Link></button>
-                </div>
+                </form>
             </div>
         );
     }

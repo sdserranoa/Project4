@@ -54,8 +54,13 @@ class SignIn extends Component {
         }
 
         this.props.login(this.state.username, this.state.password);
-        //this.t1();
+        this.clearForm();
     }
+
+    clearForm = () => { 
+        document.getElementById("form-login").reset();
+      }
+      
 
     render() {
 
@@ -74,7 +79,7 @@ class SignIn extends Component {
             <div>
                 <div className="inner-container">
                     <div className="header">Login</div>
-                    <div className="box">
+                    <form className="box" id="form-login">
 
                         <div className="input-group">
                             <label htmlFor="username">Username</label>
@@ -90,8 +95,9 @@ class SignIn extends Component {
                             <small className="danger-error">{passwordErr ? passwordErr : ""}</small>
                         </div>
 
+
                         <button type="button" className="login-btn" onClick={this.submitLogin.bind(this)}><Link to="/">Login</Link></button>
-                    </div>
+                    </form>
                 </div>
             </div>
         );
