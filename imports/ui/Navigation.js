@@ -56,6 +56,7 @@ export default class Navigation extends Component {
                             <Nav.Link href="/diets">Diets</Nav.Link>
                             <Nav.Link href="/Orders">Orders</Nav.Link>
                             <Nav.Link href="/meals">Meals</Nav.Link>
+                            <Link to="/dashboard">Dashboard</Link>
                             {Meteor.userId() &&
                                 <Nav.Link href="/chat">Chat</Nav.Link>
                             }

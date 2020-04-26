@@ -8,8 +8,6 @@ Meteor.startup(() => {
   // code to run on server at startup
   Meals.remove({});
 
-  console.log(Meals.find({}).count());
-
   if (Meals.find({}).count() === 0) {
     mealsMock.forEach(e => {
       Meals.insert(e)
