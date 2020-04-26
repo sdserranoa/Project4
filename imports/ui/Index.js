@@ -14,16 +14,11 @@ import MealFilter from './Meals/MealFilter.js';
 import Footer from './Footer/Footer';
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import { Link } from "react-router-dom";
+import { MdHome, MdSettings, MdEmail, MdInfo, MdWeb } from 'react-icons/md'
+
 import Dashboard from './Dashboard/Dashboard'
 //import ToastU from './UserManager/Toast.js'
 
-const items = [
-    { to: '/', label: 'Home' },
-    { to: '/diets', label: 'Diets' },
-    { to: '/Orders', label: 'Orders' },
-    { to: '/meals', label: 'Meals' },
-    { to: '/chat', label: 'Chat' },
-  ]
 
 class Index extends Component {
     constructor() {
@@ -32,12 +27,13 @@ class Index extends Component {
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
         this.singup = this.singup.bind(this);
+       
     }
 
     getMeteorData = () => {
         this.setState({ isAuthenticated: Meteor.userId() !== null });
     }
-
+ 
     login(username, password) {
 
         Meteor.loginWithPassword(username, password, (err) => {
@@ -81,12 +77,13 @@ class Index extends Component {
 
 
     render() {
-       
+     
         return (
+            
             <Router>
                 <Navigation logout={this.logout} />
-          
-                <Route path="/" exact component={Home} />
+              
+                <Route path="/" exact component={Home}  />
                 <Route path="/diets" component={Diets} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/orders" component={Orders} />
@@ -96,21 +93,16 @@ class Index extends Component {
                 <Route path="/chat" component={ChatApp} />
                 <Route path="/profile" component={Profile} />
                 <Route path="/SignUp" render={props => <UserWrap singup={this.singup} login={this.login} />} />
-                <Breadcrumb>
- 
-          <Breadcrumb.Item   >
-            {window.location.pathname}
-          </Breadcrumb.Item>
-        
-      </Breadcrumb>
+            
+    
                 <Route path="/" component={Footer} />
                
             </Router>
-      
+         
         
             
         );
     };
 }
 
-export default Index;
+export default Index ;

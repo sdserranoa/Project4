@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { withTracker } from 'meteor/react-meteor-data';
 import { Container, Row, Carousel, Image, Col, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import { Meals } from '../../api/meals'
 import CartButton from '../cart/CartButton'
 import Rating from '../Ratings/Rating'
@@ -102,6 +102,10 @@ class MealDetail extends Component {
                         </Carousel>
                     </Col>
                 </Row>
+                <Breadcrumb>
+                <Link to="/"> meals </Link>    /
+                 <Link to="/meals"> {meal.name}</Link> 
+            </Breadcrumb>
             </Container >
         )
     }

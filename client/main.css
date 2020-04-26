@@ -1,5 +1,5 @@
 .nav-link {
-  color: #ff5100 !important;
+  color: #CC4100 !important;
 }
 
 .nav-link:hover {
@@ -11,6 +11,16 @@ button>a {
   width: fit-content(max-content);
 }
 
+.btn-primary{
+  background-color: #006FE6;
+  border-color: #006FE6;
+}
+
+.btn-outline-success{
+  color: #208337;
+  border-color: #208337;
+}
+
 button>a:hover {
   color: white;
   text-decoration: none;
@@ -19,6 +29,7 @@ button>a:hover {
 
 .navbar-brand {
   color: #3A7000 !important;
+  font-weight: bold;
 }
 
 .form-check-input:hover, .form-check-label:hover {
@@ -27,6 +38,12 @@ button>a:hover {
 
 .gallery{
 margin-top: 5.5%;
+}
+Breadcrumb{
+  margin-top: 50px;
+  }
+Navbar{
+  margin-bottom: 50px;
 }
 
 /*    ===============================================User Wrap=================================    */
@@ -45,16 +62,16 @@ body {
 }
 
 #SignUpLink {
-  color: #ff5100;
+  color: #CC4100;
   display: inline-block;
   font-weight: 400;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #ff5100;
-  border-top-color: #ff5100;
-  border-right-color: #ff5100;
-  border-bottom-color: #ff5100;
-  border-left-color: #ff5100;
+  border: 1px solid #CC4100;
+  border-top-color: #CC4100;
+  border-right-color: #CC4100;
+  border-bottom-color: #CC4100;
+  border-left-color: #CC4100;
   padding: .375rem .75rem;
   font-size: 1rem;
   border-radius: .25rem;
@@ -63,7 +80,7 @@ body {
 }
 
 #SignUpLink:hover {
-  background-color: #ff5100;
+  background-color: #CC4100;
   color: white;
 }
 
@@ -81,7 +98,7 @@ body {
 }
 #currentUsername:hover {
   text-decoration: none;
-  color:#ff5100 !important;
+  color:#CC4100 !important;
 }
 
 #SignInLink {
@@ -155,7 +172,7 @@ body {
 }
 
 .titleLogin {
-  color: #ff5100;
+  color: #CC4100;
   text-align: center;
   padding: 10px;
   margin-bottom: 24px;
@@ -238,7 +255,7 @@ body {
 }
 
 .login-btn:hover, .login-btn:focus {
-  background-color: #ff5100;
+  background-color: #CC4100;
   color: white;
 }
 

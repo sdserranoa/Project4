@@ -4,6 +4,8 @@ import io from 'socket.io-client';
 import Messages from './Messages';
 import ChatInput from './ChatInput';
 import { Card, Container, Row, Col, Toast } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
 class ChatApp extends React.Component {
   socket = {};
   constructor(props) {
@@ -55,7 +57,10 @@ class ChatApp extends React.Component {
         </Card>
         </Col>
         </Row>
-       
+        <Breadcrumb>
+                     <Link to="/"> chat </Link>    
+            
+            </Breadcrumb>
       </div>
     );
   }
