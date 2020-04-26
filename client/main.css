@@ -32,6 +32,12 @@ button>a:hover {
 .gallery{
 margin-top: 5.5%;
 }
+Breadcrumb{
+  margin-top: 50px;
+  }
+Navbar{
+  margin-bottom: 50px;
+}
 
 /*    ===============================================User Wrap=================================    */
 

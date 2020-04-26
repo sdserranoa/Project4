@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import { Form, Container, Row, Col } from 'react-bootstrap'
 import { withTracker } from 'meteor/react-meteor-data';
 import { useToasts } from 'react-toast-notifications'
-
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
+import { Link } from "react-router-dom";
 import { Meals } from '../../api/meals'
 import MealList from './MealList';
+
 
 class MealFilter extends Component {
     constructor(props) {
@@ -151,6 +153,7 @@ class MealFilter extends Component {
 
         return (
             <div role="contentinfo">
+        
                 <h1 style={{ paddingLeft: '15px' }}>Comidas</h1>
                 <Row>
                     <Col xl={2} className="meal-filter">
@@ -244,6 +247,9 @@ class MealFilter extends Component {
                         <MealList meals={filteredMeals} />
                     </Col>
                 </Row>
+                <Breadcrumb>
+                <Link to="/">  meals  </Link>   
+            </Breadcrumb>
             </div>
         )
     }

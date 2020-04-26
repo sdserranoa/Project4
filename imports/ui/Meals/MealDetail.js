@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { withTracker } from 'meteor/react-meteor-data';
 import { Container, Row, Carousel, Image, Col, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import { Meals } from '../../api/meals'
 import CartButton from '../cart/CartButton'
 
@@ -19,7 +19,9 @@ class MealDetail extends Component {
 
         return (
             <Container fluid role="contentinfo" className="mb-3">
+            
                 <Link to="/meals"><BackIcon /> Volver a la lista de comidas</Link>
+              
                 <h1>Información Adicional: {meal.name}</h1>
                 <Row>
                     <Col>
@@ -101,6 +103,10 @@ class MealDetail extends Component {
                         </Carousel>
                     </Col>
                 </Row>
+                <Breadcrumb>
+                <Link to="/"> meals </Link>    /
+                 <Link to="/meals"> {meal.name}</Link> 
+            </Breadcrumb>
             </Container >
         )
     }
