@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import { Card } from 'react-bootstrap/';
 
-export default function addProducts(){
-    const aux = this.state.products.concat(product);
-    this.setState({ products: aux });
-}
 
 export default class Cart extends Component {
 
