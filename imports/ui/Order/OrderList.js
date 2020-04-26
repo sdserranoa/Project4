@@ -88,6 +88,36 @@ export default class OrderList extends Component {
                     }
                 ]
             },
+            {
+                id: 6,
+                userName: "Santiago Torres",
+                date: new Date().getDate(),
+                userId: 2,
+                address: "Calle 1 Carrera 1",
+                total: 18295,
+                delivered: false,
+                products: [
+                    {
+                        id: 21,
+                        cant: 1
+                    }
+                ]
+            },
+            {
+                id: 7,
+                userName: "Santiago Torres",
+                date: new Date().getDate(),
+                userId: 2,
+                address: "Calle 1 Carrera 1",
+                total: 18295,
+                delivered: true,
+                products: [
+                    {
+                        id: 21,
+                        cant: 1
+                    }
+                ]
+            },
         ],
     };
 
@@ -95,10 +125,9 @@ export default class OrderList extends Component {
     
         return (
             <div>
-                <Container fluid="true">
+                <Container fluid="true" >
                     <h1 style={{ textAlign: "center" }}>Orders</h1>
                     <hr></hr>
-                    <input type="text" id="min" name="min" placeholder="Search" value={this.state.inputValue} onChange={this.orderFilterOnChange}></input>
                     <Row>
                         <Col>
                             <OrderTable orders={this.state.orders} onDetail={this.handleDetail} />

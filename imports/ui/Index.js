@@ -14,6 +14,7 @@ import MealFilter from './Meals/MealFilter.js';
 import Footer from './Footer/Footer';
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import { Link } from "react-router-dom";
+import Cart from './cart/Cart'
 //import ToastU from './UserManager/Toast.js'
 
 const items = [
@@ -84,7 +85,7 @@ class Index extends Component {
         return (
             <Router>
                 <Navigation logout={this.logout} />
-          
+                
                 <Route path="/" exact component={Home} />
                 <Route path="/diets" component={Diets} />
                 <Route path="/contact" component={Contact} />
@@ -93,6 +94,7 @@ class Index extends Component {
                 <Route path="/meals/:id" component={MealDetail} />
                 <Route path="/chat" component={ChatApp} />
                 <Route path="/profile" component={Profile} />
+                <Route path="/cart" component={Cart}/>
                 <Route path="/SignUp" render={props => <UserWrap singup={this.singup} login={this.login} />} />
                 <Breadcrumb>
  
