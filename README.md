@@ -17,7 +17,7 @@ No utilizamos Express para el back porque desde Meteor se puede administrar con 
 
 
 URL de un video en el que se demuestre la funcionalidad la aplicación:
--
+https://www.youtube.com/watch?v=c0vUClF3xIY
 
 URL para ver el live demode la aplicación:
 -
