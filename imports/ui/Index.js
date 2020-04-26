@@ -11,8 +11,8 @@ import Profile from './UserManager/Profile.js';
 import { Meteor } from 'meteor/meteor';
 import ChatApp from './chat/ChatApp';
 import MealFilter from './Meals/MealFilter.js';
-import Footer from './Footer';
-
+import Footer from './Footer/Footer';
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import { Link } from "react-router-dom";
 import { MdHome, MdSettings, MdEmail, MdInfo, MdWeb } from 'react-icons/md'
 
@@ -38,12 +38,13 @@ class Index extends Component {
         Meteor.loginWithPassword(username, password, (err) => {
             if (err) {
                 console.log(err.reason);
-                //<ToastU title={"There was an error"} description={err.reason} />
+                return false
             } else {
                 console.log("You're in!");
-                //<ToastU title={"You're In!"} description={"Great job!"} />
+                this.getMeteorData();
+                return true;
             }
-            this.getMeteorData();
+            
         });
 
     }
@@ -63,12 +64,13 @@ class Index extends Component {
         Accounts.createUser({ email, username, password, profile:{rol:"user"} }, (err) => {
             if (err) {
                 console.log(err.reason);
-                //<ToastU title={"There was an error"} description={err.reason} />
+                return false;
             } else {
+                this.getMeteorData();
                 console.log("You're In");
-                //<ToastU title={"You register succesfully!"} description={"Congrats! This is the first step into a healthy lifestyle!"} />
+                return true;
             }
-            this.getMeteorData();
+            
         });
     }
 

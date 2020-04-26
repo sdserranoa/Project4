@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
 import zxcvbn from 'zxcvbn';
-//import { Accounts } from 'meteor/accounts-base';
 import * as EmailValidator from "email-validator";
 import { Link } from 'react-router-dom';
 
@@ -38,6 +37,7 @@ class SignUp extends Component {
     onUsernameChange(e) {
         this.setState({ username: e.target.value });
         //We want to clear the error when ever the user type something new 
+        this.clearValidationErr("Iusername");
         this.clearValidationErr("username");
     }
 
@@ -49,6 +49,7 @@ class SignUp extends Component {
             console.log('es invalido el email');
             this.showValidationErr("email2", "This email appears to be invalid");
         }
+        this.clearValidationErr("Iusername");
     }
 
     onPasswordChange(e) {
@@ -60,6 +61,7 @@ class SignUp extends Component {
             pwdscore: evaluation.score,
             pwdsuggestions: evaluation.feedback.suggestions
         });
+        this.clearValidationErr("Iusername");
     }
 
     submitRegister(e) {
@@ -74,7 +76,10 @@ class SignUp extends Component {
             this.showValidationErr("password", "Password can't be empty!");
         }
 
-        this.props.singup(this.state.email, this.state.username, this.state.password);
+        let registered=this.props.singup(this.state.email, this.state.username, this.state.password);
+        if(!registered){
+            this.showValidationErr("Iusername", "Username or email already exists.");
+        }
         this.clearForm();
     }
 
@@ -90,7 +95,10 @@ class SignUp extends Component {
         let usernameErr = null, passwordErr = null, emailErr = null;
         //Loop and find which ones has the error
         for (let err of this.state.errors) {
-            //Assign the validation error message 
+            //Assign the validation error message
+            if (err.elm == "Iusername") {
+                usernameErr = err.msg;
+            } 
             if (err.elm == "username") {
                 usernameErr = err.msg;
             }

@@ -11,6 +11,7 @@ export default class Order extends Component {
                 <td>{this.state.userName}</td>
                 <td>{this.state.address}</td>
                 <td>{this.state.total}</td>
+                <td>{this.state.date}</td>
                 <td>{this.state.delivered.toString()}</td>
             </tr>
         )

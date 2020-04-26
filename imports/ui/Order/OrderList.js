@@ -12,48 +12,83 @@ export default class OrderList extends Component {
             {
                 id: 1,
                 userName: "Mariela Garcia",
+                date: new Date().getDate(),
                 userId: 1,
                 address: "Calle 1 Carrera 1",
-                total: 20000,
+                total: 18295,
                 delivered: true,
+                products: [
+                    {
+                        id: 21,
+                        cant: 1
+                    }
+                ]
             },
             {
                 id: 2,
                 userName: "Juan Gonzales",
+                date: new Date().getDate(),
                 userId: 2,
                 address: "Calle 1 Carrera 1",
-                total: 30000,
+                total: 18295+7459,
                 delivered: false,
+                products: [
+                    {
+                        id: 21,
+                        cant: 1
+                    },
+                    {
+                        id: 85,
+                        cant: 1
+                    }
+                ]
             },
             {
                 id: 3,
                 userName: "Camilo Martinez",
+                date: new Date().getDate(),
                 userId: 2,
                 address: "Calle 1 Carrera 1",
-                total: 40000,
+                total: 18295,
                 delivered: false,
+                products: [
+                    {
+                        id: 21,
+                        cant: 1
+                    }
+                ]
             },
             {
                 id: 4,
                 userName: "Santiago Torres",
+                date: new Date().getDate(),
                 userId: 2,
                 address: "Calle 1 Carrera 1",
-                total: 60000,
+                total: 18295,
                 delivered: true,
+                products: [
+                    {
+                        id: 21,
+                        cant: 1
+                    }
+                ]
             },
             {
                 id: 5,
                 userName: "Santiago Torres",
+                date: new Date().getDate(),
                 userId: 2,
                 address: "Calle 1 Carrera 1",
-                total: 50000,
+                total: 18295,
                 delivered: true,
+                products: [
+                    {
+                        id: 21,
+                        cant: 1
+                    }
+                ]
             },
         ],
-        renderDetail: {
-            render: false,
-            current: 1,
-        }
     };
 
     render() {
