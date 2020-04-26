@@ -93,9 +93,6 @@ export default class OrderList extends Component {
                         <Col>
                             <OrderTable orders={this.state.orders} onDetail={this.handleDetail} />
                         </Col>
-                        <Col>
-                            {this.renderDetail()}
-                        </Col>
                     </Row>
                 </Container>
             </div>
