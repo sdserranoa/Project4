@@ -56,31 +56,6 @@ export default class OrderList extends Component {
         }
     };
 
-    handleDetail = id => {
-        
-        this.setState({
-            renderDetail: {
-                redner: true,
-                current: id,
-            }
-        })
-    }
-
-    renderDetail = () =>{
-        console.log(this.state.renderDetail.render)
-        if(this.state.renderDetail.render){
-            return(
-                <OrderDetail detail={this.state.tasks.filter(t => t.id == this.state.renderDetail.current)} />
-            )
-        } else {
-            return(
-                <div>
-                    <h1>No selected detail</h1>
-                </div>
-            )
-        }
-    }
-
     render() {
     
         return (
@@ -92,9 +67,6 @@ export default class OrderList extends Component {
                     <Row>
                         <Col>
                             <OrderTable orders={this.state.orders} onDetail={this.handleDetail} />
-                        </Col>
-                        <Col>
-                            {this.renderDetail()}
                         </Col>
                     </Row>
                 </Container>
