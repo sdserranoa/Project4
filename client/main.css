@@ -59,6 +59,7 @@ body {
   font-size: 1rem;
   border-radius: .25rem;
   text-decoration: none;
+  margin: 0 15px;
 }
 
 #SignUpLink:hover {
@@ -73,12 +74,14 @@ body {
   cursor: pointer;
   background-color: transparent;
   border-bottom: 3px solid #3A7000;
-  /*border: 1px solid #ff5100;
-  border-top-color: #ff5100;
-  border-right-color: #ff5100;
-  border-left-color: #ff5100;*/
-  padding: .375rem .75rem 0;
+  text-decoration: none;
+  padding: 0;
+  margin: .375rem .75rem 0;
   font-size: 1rem;
+}
+#currentUsername:hover {
+  text-decoration: none;
+  color:#ff5100 !important;
 }
 
 canvas{
@@ -359,3 +362,10 @@ ol {
 }
 
 /* Meals styles */
+
+/*Profile stylex*/
+#profile{
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
