@@ -32,10 +32,6 @@ button>a:hover {
   font-weight: bold;
 }
 
-.dropdown-toggle {
-  color: #28a745 !important;
-}
-
 .form-check-input:hover, .form-check-label:hover {
   cursor: pointer;
 }
@@ -97,10 +93,6 @@ body {
 #currentUsername:hover {
   text-decoration: none;
   color:#CC4100 !important;
-}
-
-canvas{
-  position: fixed !important;
 }
 
 #SignInLink {
@@ -388,3 +380,74 @@ ol {
    font-weight: bold;
  }
 
+/* Dashboard */
+
+.revenue-card {
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+.income-card {
+  background: #11998e;
+  background: -webkit-linear-gradient(45deg, #38ef7d, #11998e);
+  background: linear-gradient(45deg, #38ef7d, #11998e);
+  -webkit-box-shadow: 0px 10px 40px -10px #38ef7d;
+  -moz-box-shadow: 0px 10px 40px -10px #38ef7d;
+  box-shadow: 0px 10px 40px -10px #38ef7d;
+}
+
+.expenses-card {
+  background: #F00000;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(45deg, #F00000, #DC281E);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(45deg, #F00000, #DC281E);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-box-shadow: 0px 10px 40px -10px #F00000;
+  -moz-box-shadow: 0px 10px 40px -10px #F00000;
+  box-shadow: 0px 10px 40px -10px #F00000;
+}
+
+.total-revenue-card {
+  background: #00c6ff;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(45deg, #00c6ff, #0072ff);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-box-shadow: 0px 10px 40px -10px #00c6ff;
+  -moz-box-shadow: 0px 10px 40px -10px #00c6ff;
+  box-shadow: 0px 10px 40px -10px #00c6ff;
+}
+
+.orders-card {
+  background: #8E2DE2;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(45deg, #8E2DE2, #4A00E0);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(45deg, #8E2DE2, #4A00E0);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-box-shadow: 0px 10px 40px -10px #8E2DE2;
+  -moz-box-shadow: 0px 10px 40px -10px #8E2DE2;
+  box-shadow: 0px 10px 40px -10px #8E2DE2;
+}
+
+.revenue-text {
+  margin: auto;
+  text-align: left;
+}
+
+.revenue-statistic {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.rating-star {
+  color: rgb(254, 191, 97)
+}
+
+.rating-star-input {
+  cursor: pointer;
+}

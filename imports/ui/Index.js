@@ -11,8 +11,11 @@ import Profile from './UserManager/Profile.js';
 import { Meteor } from 'meteor/meteor';
 import ChatApp from './chat/ChatApp';
 import MealFilter from './Meals/MealFilter.js';
-import Footer from './Footer';
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
+import Footer from './Footer/Footer';
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
+import { Link } from "react-router-dom";
+import Dashboard from './Dashboard/Dashboard'
+//import ToastU from './UserManager/Toast.js'
 
 const items = [
     { to: '/', label: 'Home' },
@@ -89,6 +92,7 @@ class Index extends Component {
                 <Route path="/orders" component={Orders} />
                 <Route path="/meals" exact component={MealFilter} />
                 <Route path="/meals/:id" component={MealDetail} />
+                <Route path="/dashboard" component={Dashboard} />
                 <Route path="/chat" component={ChatApp} />
                 <Route path="/profile" component={Profile} />
                 <Route path="/SignUp" render={props => <UserWrap singup={this.singup} login={this.login} />} />
