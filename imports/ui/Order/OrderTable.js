@@ -13,7 +13,7 @@ export default class OrderTable extends Component {
   renderRow = (t, i) => {
     if (t.delivered) {
       return (
-        <tr key={i} bgcolor="#8DEF70" onClick={() => this.props.onDetail(t.id)}>
+        <tr key={i} bgcolor="#8DEF70" onClick={() => this.handleSelect(t.id)}>
           <td>{t.id}</td>
           <td>{t.userName}</td>
           <td>{t.address}</td>
