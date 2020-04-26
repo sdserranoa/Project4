@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
-import ChatApp from './chat/ChatApp';
-import Card from 'react-bootstrap/Card'
-import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 
 
@@ -49,10 +46,6 @@ export default class Navigation extends Component {
                                 <Link to="/chat" className="nav-link">Chat</Link>
                             }
                         </Nav>
-                        <Form inline>
-                            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                            <Button variant="outline-success">Search</Button>
-                        </Form>
                         <Nav>
                             {!Meteor.userId() &&
                                 <Link to="/SignUp" id="SignUpLink" variant="dark">Sign up
@@ -63,16 +56,6 @@ export default class Navigation extends Component {
                                 <Link to="/" onClick={this.logoutReload.bind(this)} id="SignUpLink" variant="dark">Log out
                                 </Link>
                             }
-
-                            <Snackbar
-                                anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-                                open={this.state.showAlert}
-                                autoHideDuration={6000}
-                                onClose={this.handleCloseAlert.bind(this)}>
-                                <Alert onClose={this.handleCloseAlert.bind(this)} severity="success">
-                                    ¡alerta!
-                                </Alert>
-                            </Snackbar>
 
                             {Meteor.userId() &&
                                 <Link to="/profile" id="currentUsername">{Meteor.user().username[0].toUpperCase() + Meteor.user().username.slice(1).toLowerCase()}
