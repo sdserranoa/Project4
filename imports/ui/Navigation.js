@@ -70,9 +70,8 @@ export default class Navigation extends Component {
                                 </Link>
                             }
 
-                            <Link to="/profile" id="currentUsername">{Meteor.user().username[0].toUpperCase() + Meteor.user().username.slice(1).toLowerCase()}
-                            </Link>*/
-                            }
+                                <Link to="/profile" id="currentUsername">{//Meteor.user().username[0].toUpperCase() + Meteor.user().username.slice(1).toLowerCase()}
+    }</Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
