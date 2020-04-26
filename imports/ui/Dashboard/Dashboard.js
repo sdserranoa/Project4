@@ -22,7 +22,7 @@ export default class Dashboard extends Component {
                         <div className="revenue-card income-card">
                             <Row>
                                 <Col>
-                                    <p className="revenue-text revenue-statistic">20.000</p>
+                                    <p className="revenue-text revenue-statistic">32.400.000</p>
                                 </Col>
                                 <Col xs="auto">
                                     <IncomeIcon />
@@ -37,7 +37,7 @@ export default class Dashboard extends Component {
                         <div className="revenue-card expenses-card">
                             <Row>
                                 <Col>
-                                    <p className="revenue-text revenue-statistic">20.000</p>
+                                    <p className="revenue-text revenue-statistic">20.000.000</p>
                                 </Col>
                                 <Col xs="auto">
                                     <ExpensesIcon />
@@ -52,7 +52,7 @@ export default class Dashboard extends Component {
                         <div className="revenue-card total-revenue-card">
                             <Row>
                                 <Col>
-                                    <p className="revenue-text revenue-statistic">20.000</p>
+                                    <p className="revenue-text revenue-statistic">12.400.000</p>
                                 </Col>
                                 <Col xs="auto">
                                     <RevenueIcon />
@@ -67,7 +67,7 @@ export default class Dashboard extends Component {
                         <div className="revenue-card orders-card">
                             <Row>
                                 <Col>
-                                    <p className="revenue-text revenue-statistic">20.000</p>
+                                    <p className="revenue-text revenue-statistic">2.394</p>
                                 </Col>
                                 <Col xs="auto">
                                     <CartIcon />

@@ -31,10 +31,10 @@ export default class ExpensesChart extends Component {
                     showInLegend: true,
                     yValueFormatString: "#,###k",
                     dataPoints: [
-                        { label: "Jan", y: 14 },
-                        { label: "Feb", y: 12 },
-                        { label: "Mar", y: 14 },
-                        { label: "Apr", y: 13 }
+                        { label: "Jan", y: 1000 },
+                        { label: "Feb", y: 5000 },
+                        { label: "Mar", y: 6000 },
+                        { label: "Apr", y: 5000 }
                     ]
                 },
                 {
@@ -43,10 +43,10 @@ export default class ExpensesChart extends Component {
                     showInLegend: true,
                     yValueFormatString: "#,###k",
                     dataPoints: [
-                        { label: "Jan", y: 13 },
-                        { label: "Feb", y: 13 },
-                        { label: "Mar", y: 15 },
-                        { label: "Apr", y: 16 }
+                        { label: "Jan", y: 1300 },
+                        { label: "Feb", y: 1300 },
+                        { label: "Mar", y: 1500 },
+                        { label: "Apr", y: 4000 }
                     ]
                 },
                 {
@@ -55,10 +55,10 @@ export default class ExpensesChart extends Component {
                     showInLegend: true,
                     yValueFormatString: "#,###k",
                     dataPoints: [
-                        { label: "Jan", y: 13 },
-                        { label: "Feb", y: 13 },
-                        { label: "Mar", y: 15 },
-                        { label: "Apr", y: 15 }
+                        { label: "Jan", y: 1300 },
+                        { label: "Feb", y: 1300 },
+                        { label: "Mar", y: 1500 },
+                        { label: "Apr", y: 10000 }
                     ]
                 },
                 {
@@ -67,10 +67,10 @@ export default class ExpensesChart extends Component {
                     showInLegend: true,
                     yValueFormatString: "#,###k",
                     dataPoints: [
-                        { label: "Jan", y: 14 },
-                        { label: "Feb", y: 8 },
-                        { label: "Mar", y: 6 },
-                        { label: "Apr", y: 6 }
+                        { label: "Jan", y: 1400 },
+                        { label: "Feb", y: 8000 },
+                        { label: "Mar", y: 6000 },
+                        { label: "Apr", y: 1000 }
                     ]
                 }]
         }
