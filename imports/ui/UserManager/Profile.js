@@ -19,9 +19,6 @@ export default class Profile extends Component {
                                             <Row as="h2">Username: {u.username}</Row>
                                             <Row as="p" style={{ color: '#323232' }}><strong>Id: {u._id}</strong></Row>
                                             <Row as="p">{u.email}</Row>
-                                            {/*<Row as="p" style={{ color: 'gray' }}>
-                                                <strong type={"password"}>Password: {u.password}</strong>
-                                            </Row>*/}
                                         </Col>
                                     </Row>
                                 </Container>

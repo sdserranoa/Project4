@@ -41,7 +41,5 @@
     },
     "testModule": "tests/main.js"
   },
-  "devDependencies": {
-    
-  }
+  "devDependencies": {}
 }
