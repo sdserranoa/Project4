@@ -45,7 +45,7 @@ export default class CartButton extends Component {
                     autoHideDuration={6000}
                     onClose={this.handleCloseAlert.bind(this)}>
                     <Alert onClose={this.handleCloseAlert.bind(this)} severity="success">
-                        ¡{this.props.mealName} agregado al carrito!
+                        ¡{this.props.mealName} added to shopping cart!
                     </Alert>
                 </Snackbar>
             </div>
