@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Carousel } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import ImageGallery from 'react-image-gallery';
-
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import "react-image-gallery/styles/css/image-gallery.css";
 const images = [
     {
@@ -30,7 +30,13 @@ class Home extends Component {
 
     render() {
         return (
-            <div className="gallery">              
+            <div className="gallery">   
+            <Breadcrumb>
+            {this.props.location.pathname.split('/').forEach(crumb=>
+               <Breadcrumb.Item>{crumb}  </Breadcrumb.Item>   )}
+          
+            </Breadcrumb>
+                      
                 {/*<Carousel>
                     <Carousel.Item>
                         <img
