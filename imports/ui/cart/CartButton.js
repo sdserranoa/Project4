@@ -26,6 +26,9 @@ export default class CartButton extends Component {
     }
 
     handleClick() {
+
+        
+
         this.setState({
             showAlert: true
         })
