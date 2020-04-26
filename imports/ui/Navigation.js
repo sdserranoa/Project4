@@ -30,6 +30,18 @@ export default class Navigation extends Component {
         }).bind(this);
     }
 
+    renderOrders(){
+        if(Meteor.user().profile.rol == "admin"){
+            return(
+                <Link to="/Orders" className="nav-link">Orders</Link>
+            )
+        } else {
+            return(
+                <div></div>
+            )
+        }
+    }
+
     render() {
         return (
             <div>
@@ -42,6 +54,7 @@ export default class Navigation extends Component {
                             <Link to="/diets" className="nav-link">Diets</Link>
                             <Link to="/Orders" className="nav-link">Orders</Link>
                             <Link to="/meals" className="nav-link">Meals</Link>
+                            <Link to="/cart" className="nav-link">Cart</Link>
                             {Meteor.userId() && Meteor.user().profile.rol == "admin" &&
                                 <Link to="/dashboard" className="nav-link">Dashboard</Link>
                             }
