@@ -24,7 +24,7 @@ export default class MealList extends Component {
             return (
                 <div role="contentinfo">
                     <Container fluid className="text-center align-items-center">
-                        <h2 style={{ color: 'grey' }}>No hay comidas con los filtros que indicaste</h2>
+                        <h2 style={{ color: 'grey' }}>There are no foods with the applied filters</h2>
                     </Container>
                 </div>
             )

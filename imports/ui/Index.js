@@ -16,6 +16,7 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import { Link } from "react-router-dom";
 import { MdHome, MdSettings, MdEmail, MdInfo, MdWeb } from 'react-icons/md'
 
+import Dashboard from './Dashboard/Dashboard'
 //import ToastU from './UserManager/Toast.js'
 
 
@@ -88,6 +89,7 @@ class Index extends Component {
                 <Route path="/orders" component={Orders} />
                 <Route path="/meals" exact component={MealFilter} />
                 <Route path="/meals/:id" component={MealDetail} />
+                <Route path="/dashboard" component={Dashboard} />
                 <Route path="/chat" component={ChatApp} />
                 <Route path="/profile" component={Profile} />
                 <Route path="/SignUp" render={props => <UserWrap singup={this.singup} login={this.login} />} />
