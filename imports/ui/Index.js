@@ -11,7 +11,7 @@ import Profile from './UserManager/Profile.js';
 import { Meteor } from 'meteor/meteor';
 import ChatApp from './chat/ChatApp';
 import MealFilter from './Meals/MealFilter.js';
-import Footer from './Footer';
+import Footer from './Footer/Footer';
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import { Link } from "react-router-dom";
 //import ToastU from './UserManager/Toast.js'

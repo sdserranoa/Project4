@@ -2,6 +2,8 @@ import React from 'react'
 import { Row, Col, Button, Form } from 'react-bootstrap';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import FooterSubmit from './FooterSubmit'
+
 
 function renderChat() {
     if (Meteor.user() != null) {
@@ -61,9 +63,7 @@ function Footer() {
                                     </Form>
                                     <Row>
                                         <Col>
-                                            <Button variant="primary" type="submit">
-                                                Submit
-                                    </Button>
+                                            <FooterSubmit/>
                                         </Col>
                                         <Col>{renderChat()}</Col>
                                     </Row>
