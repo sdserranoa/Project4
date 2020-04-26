@@ -36,15 +36,18 @@ class SignIn extends Component {
     onUsernameChange(e) {
         this.setState({ username: e.target.value });
         this.clearValidationErr("username");
+        this.clearValidationErr("Ipassword");
     }
 
     onPasswordChange(e) {
         this.setState({ password: e.target.value });
         this.clearValidationErr("password");
+        this.clearValidationErr("Ipassword");
     }
 
 
     submitLogin(e) {
+        
         e.preventDefault();
         if (this.state.username == "") {
             this.showValidationErr("username", "Username can't be empty!");
@@ -52,8 +55,10 @@ class SignIn extends Component {
         if (this.state.password == "") {
             this.showValidationErr("password", "Password can't be empty!");
         }
-
-        this.props.login(this.state.username, this.state.password);
+        let loggeado=this.props.login(this.state.username, this.state.password);
+        if (!loggeado) {
+            this.showValidationErr("Ipassword", "Incorrect username or password.");
+        }
         this.clearForm();
     }
 
@@ -71,9 +76,13 @@ class SignIn extends Component {
             if (err.elm == "username") {
                 usernameErr = err.msg;
             }
+            if (err.elm == "Ipassword") {
+                passwordErr = err.msg;
+            }
             if (err.elm == "password") {
                 passwordErr = err.msg;
             }
+            
         }
         return (
             <div>

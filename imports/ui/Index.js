@@ -35,11 +35,14 @@ class Index extends Component {
             if (err) {
                 console.log(err.reason);
                 //<ToastU title={"There was an error"} description={err.reason} />
+                return false
             } else {
                 console.log("You're in!");
+                this.getMeteorData();
                 //<ToastU title={"You're In!"} description={"Great job!"} />
+                return true;
             }
-            this.getMeteorData();
+            
         });
 
     }
