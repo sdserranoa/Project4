@@ -11,16 +11,15 @@ export default class OrderDetail extends Component {
         if (
             this.props.detail !== prevProps.detail
         ) {
-            console.log("Updating........", this.props);
-            this.render()
+            this.setState({ detail: this.props.detail[0] })
         }
     }
 
     render() {
         return (
-            <div>
+            <div>{console.log(this.state.detail.id)}
                 Detail de {this.state.detail.id}
-                {console.log(this.props)}
+                
             </div>
         )
     }
