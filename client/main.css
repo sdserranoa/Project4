@@ -113,7 +113,7 @@ canvas{
 .box-controller {
   background-color: white;
   visibility: visible;
-  display: -webkit-box;
+  display: -webkit-box; 
   display: -ms-flexbox;
   display: flex;
   max-width: 24em;
@@ -354,10 +354,18 @@ input[type=text].search-meal-input:focus {
   border-radius: 0px;
   color: white;
 }
+ol {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-top: 70px;
+}
 
 /* Meals styles */
+
 /*Profile stylex*/
 #profile{
   margin-top: 10%;
   margin-bottom: 5%;
 }
+
