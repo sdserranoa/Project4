@@ -43,21 +43,20 @@ export default class Navigation extends Component {
         }).bind(this);
     }
 
-
     render() {
         return (
             <div>
-                <Navbar bg="light" expand="lg">
+                <Navbar bg="light" expand="lg" className="fixed-top">
                     <Navbar.Brand href="/">EasyDiets</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link><Link to="/" className="link">Home</Link></Nav.Link>
-                            <Nav.Link><Link to="/diets">Diets</Link></Nav.Link>
-                            <Nav.Link><Link to="/Orders">Orders</Link></Nav.Link>
-                            <Nav.Link><Link to="/meals">Meals</Link></Nav.Link>
+                            <Nav.Link href="/">Home</Nav.Link>
+                            <Nav.Link href="/diets">Diets</Nav.Link>
+                            <Nav.Link href="/Orders">Orders</Nav.Link>
+                            <Nav.Link href="/meals">Meals</Nav.Link>
                             {Meteor.userId() &&
-                                <Nav.Link><Link to="/chat">Chat</Link></Nav.Link>
+                                <Nav.Link href="/chat">Chat</Nav.Link>
                             }
                         </Nav>
                         <Form inline>
@@ -66,12 +65,12 @@ export default class Navigation extends Component {
                         </Form>
                         <Nav>
                             {!Meteor.userId() &&
-                                <Nav.Link ><Link to="/SignUp" id="SignUpLink" variant="dark">Sign up</Link>
+                                <Nav.Link href="/SignUp" id="SignUpLink" variant="dark">Sign up
                                 </Nav.Link>
                             }
 
                             {Meteor.userId() &&
-                                <Nav.Link ><Link to="/" onClick={this.logoutReload.bind(this)} id="SignUpLink" variant="dark" >Log out </Link>
+                                <Nav.Link href="/" onClick={this.logoutReload.bind(this)} id="SignUpLink" variant="dark">Log out
                                 </Nav.Link>
                             }
 
@@ -86,7 +85,7 @@ export default class Navigation extends Component {
                             </Snackbar>
 
                             {Meteor.userId() &&
-                                <Nav.Link ><Link to="/profile" id="currentUsername" >{Meteor.user().username[0].toUpperCase() + Meteor.user().username.slice(1).toLowerCase()}</Link>
+                                <Nav.Link href="/" id="currentUsername">{Meteor.user().username[0].toUpperCase() + Meteor.user().username.slice(1).toLowerCase()}
                                 </Nav.Link>
                             }
                         </Nav>

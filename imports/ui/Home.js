@@ -5,17 +5,22 @@ import ImageGallery from 'react-image-gallery';
 
 import "react-image-gallery/styles/css/image-gallery.css";
 const images = [
+    {
+        original: '/assets/gal1.jpg',
+        thumbnail: '/assets/gal1.jpg',
+      },
   {
-    original: 'https://picsum.photos/id/1018/1000/600/',
-    thumbnail: 'https://picsum.photos/id/1018/250/150/',
+    
+    original: '/assets/gal2.jpg',
+    thumbnail: '/assets/gal2.jpg',
   },
   {
-    original: 'https://picsum.photos/id/1015/1000/600/',
-    thumbnail: 'https://picsum.photos/id/1015/250/150/',
+    original: '/assets/gal3.jpg',
+    thumbnail: '/assets/gal3.jpg',
   },
   {
-    original: 'https://picsum.photos/id/1019/1000/600/',
-    thumbnail: 'https://picsum.photos/id/1019/250/150/',
+    original: '/assets/gal4.jpg',
+    thumbnail: '/assets/gal4.jpg',
   },
 ];
 
