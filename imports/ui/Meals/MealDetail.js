@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import { withTracker } from 'meteor/react-meteor-data';
 import { Container, Row, Carousel, Image, Col, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import { Meals } from '../../api/meals'
 import CartButton from '../cart/CartButton'
+import Rating from '../Ratings/Rating'
 
 /* ICONS */
 import BackIcon from '@material-ui/icons/ArrowBackIosRounded';
@@ -13,20 +14,20 @@ class MealDetail extends Component {
     render() {
         const mealID = parseInt(this.props.match.params.id)
         const meals = this.props.meals
-        console.log(meals)
         const temp = meals.filter(meal => { return meal.id == mealID })
         const meal = temp[0]
 
         return (
-            <Container fluid role="contentinfo" className="mb-3">
-                <Link to="/meals"><BackIcon /> Volver a la lista de comidas</Link>
-                <h1>Información Adicional: {meal.name}</h1>
+            <Container fluid role="contentinfo" className="mb-3" style={{ marginTop: '65px' }}>
+                <Link to="/meals"><BackIcon /> Go back to meals list</Link>
+                <h1>Additional Information: {meal.name}</h1>
                 <Row>
                     <Col>
                         <p>{meal.description}</p>
                         <Row>
                             <Col>
-                                <p style={{ color: 'green' }}>Precio unidad: <strong>${meal.price}</strong></p>
+                                <p style={{ color: 'green' }}>Unit price: <strong>${meal.price}</strong></p>
+                                <Rating usersRating={Math.random() * 5} />
                             </Col>
                             <Col>
                                 <CartButton mealName={meal.name} />
@@ -34,29 +35,29 @@ class MealDetail extends Component {
                             <hr />
 
                             <Col xs={12}>
-                                <h2>Información Nutricional</h2>
+                                <h2>Nutritional Information</h2>
                                 <Table responsive hover>
                                     <thead>
                                         <tr>
-                                            <th>Componente</th>
-                                            <th>Cantidad / Unidad</th>
+                                            <th>Component</th>
+                                            <th>Quantity / Unit</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Calorías</td>
+                                            <td>Calories</td>
                                             <td>{meal.calories}</td>
                                         </tr>
                                         <tr>
-                                            <td>Grasas</td>
+                                            <td>Fats</td>
                                             <td>{meal.fats}g</td>
                                         </tr>
                                         <tr>
-                                            <td>Carbohidratos</td>
+                                            <td>Carbs</td>
                                             <td>{meal.carbs}g</td>
                                         </tr>
                                         <tr>
-                                            <td>Proteínas</td>
+                                            <td>Proteins</td>
                                             <td>{meal.proteins}g</td>
                                         </tr>
                                     </tbody>
@@ -65,12 +66,12 @@ class MealDetail extends Component {
                             <hr />
 
                             <Col xs={12}>
-                                <h2>Ingredientes</h2>
+                                <h2>Ingredients</h2>
                                 <Table responsive hover>
                                     <thead>
                                         <tr>
-                                            <th>Ingrediente</th>
-                                            <th>Cantidad (g)</th>
+                                            <th>Ingredient</th>
+                                            <th>Quantity (g)</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -101,6 +102,10 @@ class MealDetail extends Component {
                         </Carousel>
                     </Col>
                 </Row>
+                <Breadcrumb>
+                <Link to="/"> meals </Link>    /
+                 <Link to="/meals"> {meal.name}</Link> 
+            </Breadcrumb>
             </Container >
         )
     }
