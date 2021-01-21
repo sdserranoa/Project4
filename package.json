@@ -33,7 +33,7 @@
     "react-through": "^1.1.4",
     "react-toast-notifications": "^2.4.0",
     "react-toastify": "^5.5.0",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.4.0",
     "stream-chat-react": "^0.11.13",
     "styled-components": "^5.1.0",
     "zxcvbn": "^4.4.2"
